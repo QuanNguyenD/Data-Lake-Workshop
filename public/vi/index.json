@@ -1,0 +1,85 @@
+[
+{
+	"uri": "//localhost:1313/vi/2-prerequiste/2.1-createiamuser/",
+	"title": "Chuẩn bị IAM User",
+	"tags": [],
+	"description": "",
+	"content": "Tạo IAM User Truy cập giao diện AWS Management Console Tìm và chọn IAM Trong giao diện IAM chọn User Trong giao diện IAM User chọn Create User Trong giao diện tạo IAM user chúng ta làm theo các bước sau:\nUser name điền data-lake-admin Tick vào Provide user access to the AWS Management Console - optional Trong phần User type chọn I want to create an IAM user Tại phần Console password bạn có thể để chọn tạo mật khẩu ngẫu nhiên hoạc theo cách thủ công Trong phần Set permissions chọn Attach policies directly và thêm các Permissions policies sau:\nAmazonS3FullAccess AmazonAthenaFullAccess AWSGlueConsoleFullAccess AWSLakeFormationDataAdmin CloudWatchLogsFullAccess Sau đó chọn Next và chọn create user trong phần Review and create\nTrong phần Retrieve password bạn có thể chọn Download .csv file về máy và lưu nó ở một nơi an toàn. "
+},
+{
+	"uri": "//localhost:1313/vi/3-datacollectionanstorage/3.1-s3data/",
+	"title": "Đưa dữ liệu vào S3 bucket ",
+	"tags": [],
+	"description": "",
+	"content": "Trong bước này chúng ta sẽ\nTruy cập giao diện AWS Management Console\nTìm và chọn S3 Truy cập vào S3 bucket đã tạo trước đó sau đó mở folder raw\nTạo 1 thư mục mới là user-logs trong raw\nChúng ta sẽ tải file order.json\nChúng ta tiến hành Upload dữ liệu:\nChọn upload Trong giao diện upload\nChọn Add file Chọn order.json Chọn upload Sau khi đã upload thành công "
+},
+{
+	"uri": "//localhost:1313/vi/1-introduce/",
+	"title": "Giới thiệu",
+	"tags": [],
+	"description": "",
+	"content": "Data Lake là một hệ thống lưu trữ dữ liệu lớn, cho phép lưu trữ dữ liệu ở dạng thô (raw data) từ nhiều nguồn khác nhau như cơ sở dữ liệu, file log, IoT, mạng xã hội,\u0026hellip; Dữ liệu trong Data Lake có thể là dữ liệu có cấu trúc (structured), bán cấu trúc (semi-structured) hoặc không cấu trúc (unstructured).\nĐặc điểm của Data Lake:\nLưu trữ dữ liệu với dung lượng lớn, chi phí thấp. Dữ liệu được lưu ở dạng gốc, chưa qua xử lý. Hỗ trợ phân tích dữ liệu, machine learning, big data. Linh hoạt trong việc truy xuất và xử lý dữ liệu. Ứng dụng của Data Lake:\nPhân tích dữ liệu lớn (Big Data Analytics). Lưu trữ dữ liệu phục vụ AI, Machine Learning. Tích hợp dữ liệu từ nhiều nguồn khác nhau. Một số nền tảng Data Lake phổ biến:: Amazon S3, Azure Data Lake, Google Cloud Storage, Hadoop HDFS.\n"
+},
+{
+	"uri": "//localhost:1313/vi/",
+	"title": "Session Management",
+	"tags": [],
+	"description": "",
+	"content": "Làm việc với Data Lake Tổng quan Trong bài lab này, bạn sẽ tìm hiểu các khái niệm cơ bản và thực hành về Data Lake Architecture sử dụng Amazon S3, AWS Lake Formation và Athena\nNội dung Giới thiệu Các bước chuẩn bị Tạo kết nối đến máy chủ EC2 Quản lý session logs Port Forwarding Dọn dẹp tài nguyên "
+},
+{
+	"uri": "//localhost:1313/vi/2-prerequiste/",
+	"title": "Các bước chuẩn bị",
+	"tags": [],
+	"description": "",
+	"content": "Trong bước này, chúng ta sẽ:\nTạo một IAM User nhằm cấp quyền truy cập các dịch vụ AWS cần thiết cho cá nhân hoặc nhóm thực hành. Tạo một bucket S3 giúp bạn lưu trữ dữ liệu. Nội dung Chuẩn bị IAM User Chuẩn bị IAM Role Tạo IAM Policy Chuẩn bị S3 "
+},
+{
+	"uri": "//localhost:1313/vi/2-prerequiste/2.2-createiamrole/",
+	"title": "Tạo IAM Role",
+	"tags": [],
+	"description": "",
+	"content": "Tạo IAM Role Trong bước này chúng ta sẽ tiến hành tạo IAM Role. Role này sẽ cho phép AWS Glue truy cập tới dữ liệu nằm trong S3 và tạo các đối tượng cần thiết trong Glue Catalog.\nTruy cập giao diện AWS Management Console\nTìm và chọn IAM Trong giao diện IAM chọn Role sau đó chọn Crete Role\nTrong bước Select trusted entity: Chọn Chọn AWS service Trong Service or use case chọn Glue Sau đó chọn Next Trong bước Trong bước Add permissions : Tìm và chọn AmazonAthenaFullAccess, AmazonS3FullAccess, AWSGlueServiceRole Sau đó chọn Next Trong bước Name, review, and create: Role name điền: GlueDataLakeRole Sau đó chọn Create role Vậy là chúng ta đã hoàn thành tạo IAM Role "
+},
+{
+	"uri": "//localhost:1313/vi/2-prerequiste/2.3-createpolicy/",
+	"title": "Tạo IAM Policiy",
+	"tags": [],
+	"description": "",
+	"content": "Test\n"
+},
+{
+	"uri": "//localhost:1313/vi/3-datacollectionanstorage/",
+	"title": "Thu thập và lưu trữ dữ liệu ",
+	"tags": [],
+	"description": "",
+	"content": " Trong phần này chúng ta sẽ tiến hành lưu dữ liệu vào S3 Trước tiên bạn hãy đăng nhập vào tài khoản IAM user đa tạo trước đó để tiến hành bài làm. Nội dung Thu thập dữ liệu vào S3 "
+},
+{
+	"uri": "//localhost:1313/vi/2-prerequiste/2.4-creates3/",
+	"title": "Chuẩn bị S3",
+	"tags": [],
+	"description": "",
+	"content": "Chuẩn bị S3 bucket để lưu trừ dữ liệu: Amazon S3 (Simple Storage Service) là dịch vụ lưu trữ đối tượng phổ biến, thường được sử dụng làm nền tảng lưu trữ cho Data Lake. Việc tạo một bucket S3 giúp bạn lưu trữ dữ liệu thô, bán cấu trúc hoặc không cấu trúc từ nhiều nguồn khác nhau, phục vụ cho phân tích dữ liệu lớn.\nỞ trong bài này chúng ta sẽ chia dữ liệu thường được phân chia thành 3 vùng (zone) để quản lý và xử lý hiệu quả:\nRaw Zone: Lưu trữ dữ liệu gốc, chưa qua xử lý từ các nguồn khác nhau (database, logs, IoT,\u0026hellip;). Dữ liệu ở dạng thô, chưa chuẩn hóa hoặc làm sạch. Processed Zone: Lưu trữ dữ liệu đã được xử lý sơ bộ như làm sạch, chuyển đổi định dạng, loại bỏ lỗi. Dữ liệu ở đây đã sẵn sàng cho các bước phân tích tiếp theo. Curated Zone Lưu trữ dữ liệu đã được tổng hợp, chuẩn hóa, sẵn sàng cho phân tích chuyên sâu hoặc phục vụ báo cáo. Dữ liệu ở zone này thường có chất lượng cao, cấu trúc rõ ràng. Triển khai thực hiện: Truy cập giao diện AWS Management Console\nTìm và chọn S3 Trong giao diện S3 chọn Create bucket Trong giao diện Create bucket\nBucket name điền datalake-ecommerce-logs Sau đó chọn Create buckert Tạo thành công bucket Sau khi đã tạo thành công bucket chọn bucket vừa tạo\nChọn Create folder Nhập Folder name là data Tạo folder thành công Chọn folder data và cọn create folder\nChọn Create folder Trong giao diện Chọn Create folder, nhập raw Chọn create folder Tương tự với việc tạo processed và curated Tạo thành công 3 folder Đó là các bước chuẩn bị , các bước về sau sẽ làm trên IAM User đã tạo\n"
+},
+{
+	"uri": "//localhost:1313/vi/6-cleanup/",
+	"title": "Session Management",
+	"tags": [],
+	"description": "",
+	"content": "Working with Data Lake "
+},
+{
+	"uri": "//localhost:1313/vi/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/vi/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]

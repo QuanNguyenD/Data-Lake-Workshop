@@ -1,0 +1,17 @@
+---
+title : "Chuẩn bị IAM User"
+date :  "2025-06-11"
+weight : 1 
+chapter : false
+pre : " <b> 2.1 </b> "
+---
+
+**Trong bước này, chúng ta sẽ:**
+- Tạo một IAM User nhằm cấp quyền truy cập các dịch vụ AWS cần thiết cho cá nhân hoặc nhóm thực hành.
+- Tạo một bucket S3 giúp bạn lưu trữ dữ liệu.
+
+
+
+### Nội dung
+  - [Tạo VPC](2.1.1-createvpc/)
+
