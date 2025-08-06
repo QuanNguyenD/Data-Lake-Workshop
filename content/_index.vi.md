@@ -9,7 +9,7 @@ chapter : false
 
 Trong bài lab này, bạn sẽ tìm hiểu các khái niệm cơ bản và thực hành về Data Lake Architecture sử dụng Amazon S3, AWS Lake Formation và Athena
 
-![ConnectPrivate](/images/Untitled_new.png) 
+![ConnectPrivate](/Data-Lake-Workshop/images/Untitled_new.png) 
 
 ### Nội dung
 
