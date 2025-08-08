@@ -35,11 +35,25 @@
 	"content": "Trong bước này, chúng ta sẽ:\nTạo một IAM User nhằm cấp quyền truy cập các dịch vụ AWS cần thiết cho cá nhân hoặc nhóm thực hành. Tạo một bucket S3 giúp bạn lưu trữ dữ liệu. Nội dung Chuẩn bị IAM User Chuẩn bị IAM Role Tạo IAM Policy Chuẩn bị S3 "
 },
 {
+	"uri": "//localhost:1313/vi/3-datacollectionanstorage/3.2-firehosestream/",
+	"title": "Tạo Firehose Stream",
+	"tags": [],
+	"description": "",
+	"content": "Tạo Firehose Stream Chuẩn bị\nGắn thêm các quyền sau vào IAM User AmazonKinesisFullAccess, AmazonKinesisFirehoseFullAccess, IAMFullAccess. Truy cập Kinesis Vào AmaZone Data Firehose Trong Firehose streams chọn Create Firehose stream Trong Create Firehose stream\nTrong Sourse chọn Direct PUT Trong Destination chọn Amazon S3 Trong Firehose stream name điền PUT-S3-UserLogsToS3 Trong Destination settings\nChọn S3 bucket đã tạo trước đó S3 bucket prefix nhập data/raw/user-logs/ S3 bucket error output prefix nhập data/error/user-logs/ Trong phần Buffer hins, compression, file extention and encryption\nBuffer size nhập 1. Buffer interval nhập 60. Trong bước Advanced settings\nService access chọn Create or update IAM role Sau đó chọn Create delivery stream Nếu trong bước trên bị lỗi IAM role khi ấn Create delivery stream bạn chỉ cần ấn lại thêm một lần nữa là được :))\nTạo thành công Firehose streams "
+},
+{
 	"uri": "//localhost:1313/vi/2-prerequiste/2.2-createiamrole/",
 	"title": "Tạo IAM Role",
 	"tags": [],
 	"description": "",
 	"content": "Tạo IAM Role Trong bước này chúng ta sẽ tiến hành tạo IAM Role. Role này sẽ cho phép AWS Glue truy cập tới dữ liệu nằm trong S3 và tạo các đối tượng cần thiết trong Glue Catalog.\nTruy cập giao diện AWS Management Console\nTìm và chọn IAM Trong giao diện IAM chọn Role sau đó chọn Crete Role\nTrong bước Select trusted entity: Chọn Chọn AWS service Trong Service or use case chọn Glue Sau đó chọn Next Trong bước Trong bước Add permissions : Tìm và chọn AmazonAthenaFullAccess, AmazonS3FullAccess, AWSGlueServiceRole Sau đó chọn Next Trong bước Name, review, and create: Role name điền: GlueDataLakeRole Sau đó chọn Create role Vậy là chúng ta đã hoàn thành tạo IAM Role "
+},
+{
+	"uri": "//localhost:1313/vi/3-datacollectionanstorage/3.3-kinesisdatagenerator/",
+	"title": "Cấu hình Amazon Cognito cho Kinesis Data Generator",
+	"tags": [],
+	"description": "",
+	"content": "Các bước thực hiện Trước tiên hãy thêm IAM role cho Iam users\nTruy cập AWS Management Console. Tìm CloudFormation. Chọn CloudFormation Trong giao diện CloudFormation chọn Create stack Tiến hành tải file setup\nTrong giao diện Create stack:\nChoose an existing template Trong phần Specify template chọn Upload a template file Trong phần Choose file chọn file đa tải về trước đó Ấn Next Trong giao diện Specify stack details\nStack name nhập Kinesis-Data-Generator-Cognito-User User name nhập admin Password nhâp mật khẩu của bạn Chọn Next Tiếp tuc chọn Next và Submit\nTạo thành công Trong giao diện Stack chọn Output và chọn KinesisDataGeneratorUrl Tiến hành nhập mật khẩu và tên đăng nhập\nTrong giao diện Amazon Kinesis Data Generator\nRecord per second nhập 2000\nRecord template chọn template 1\nNhập đoạn mã sau\n{\r\u0026#34;order_id\u0026#34;: \u0026#34;{{random.uuid}}\u0026#34;,\r\u0026#34;customer\u0026#34;: {{random.arrayElement([\r\u0026#34;\\\u0026#34;Alice\\\u0026#34;\u0026#34;, \u0026#34;\\\u0026#34;Bob\\\u0026#34;\u0026#34;, \u0026#34;\\\u0026#34;Charlie\\\u0026#34;\u0026#34;, \u0026#34;\\\u0026#34;Diana\\\u0026#34;\u0026#34;, \u0026#34;\\\u0026#34;Eve\\\u0026#34;\u0026#34;,\r\u0026#34;\\\u0026#34;Frank\\\u0026#34;\u0026#34;, \u0026#34;\\\u0026#34;Grace\\\u0026#34;\u0026#34;, \u0026#34;\\\u0026#34;Hannah\\\u0026#34;\u0026#34;, \u0026#34;\\\u0026#34;Ivan\\\u0026#34;\u0026#34;, \u0026#34;\\\u0026#34;Jack\\\u0026#34;\u0026#34;,\r\u0026#34;\\\u0026#34;Karen\\\u0026#34;\u0026#34;, \u0026#34;\\\u0026#34;Leo\\\u0026#34;\u0026#34;, \u0026#34;\\\u0026#34;Mia\\\u0026#34;\u0026#34;, \u0026#34;\\\u0026#34;Nina\\\u0026#34;\u0026#34;, \u0026#34;\\\u0026#34;Oscar\\\u0026#34;\u0026#34;\r])}},\r\u0026#34;amount\u0026#34;: {{random.number({ \u0026#34;min\u0026#34;: 50, \u0026#34;max\u0026#34;: 1000, \u0026#34;precision\u0026#34;: 0.01 })}},\r\u0026#34;timestamp\u0026#34;: \u0026#34;{{date.now(\u0026#34;iso\u0026#34;)}}\u0026#34;\r} Sau đó chon send data, và sau khi send dc 100000 thì dừng Kiểm tra lại trong S3 xem đã có dữ liệu chưa Như vây dữ liệu đa đi vào S3\n"
 },
 {
 	"uri": "//localhost:1313/vi/2-prerequiste/2.3-createpolicy/",
@@ -53,7 +67,7 @@
 	"title": "Thu thập và lưu trữ dữ liệu ",
 	"tags": [],
 	"description": "",
-	"content": " Trong phần này chúng ta sẽ tiến hành lưu dữ liệu vào S3 Trước tiên bạn hãy đăng nhập vào tài khoản IAM user đa tạo trước đó để tiến hành bài làm. Nội dung Thu thập dữ liệu vào S3 "
+	"content": " Trong phần này chúng ta sẽ tiến hành lưu dữ liệu vào S3 Trước tiên bạn hãy đăng nhập vào tài khoản IAM user đa tạo trước đó để tiến hành bài làm. Nội dung Thu thập dữ liệu vào S3 Tạo Firehose Stream "
 },
 {
 	"uri": "//localhost:1313/vi/2-prerequiste/2.4-creates3/",
@@ -63,11 +77,25 @@
 	"content": "Chuẩn bị S3 bucket để lưu trừ dữ liệu: Amazon S3 (Simple Storage Service) là dịch vụ lưu trữ đối tượng phổ biến, thường được sử dụng làm nền tảng lưu trữ cho Data Lake. Việc tạo một bucket S3 giúp bạn lưu trữ dữ liệu thô, bán cấu trúc hoặc không cấu trúc từ nhiều nguồn khác nhau, phục vụ cho phân tích dữ liệu lớn.\nỞ trong bài này chúng ta sẽ chia dữ liệu thường được phân chia thành 3 vùng (zone) để quản lý và xử lý hiệu quả:\nRaw Zone: Lưu trữ dữ liệu gốc, chưa qua xử lý từ các nguồn khác nhau (database, logs, IoT,\u0026hellip;). Dữ liệu ở dạng thô, chưa chuẩn hóa hoặc làm sạch. Processed Zone: Lưu trữ dữ liệu đã được xử lý sơ bộ như làm sạch, chuyển đổi định dạng, loại bỏ lỗi. Dữ liệu ở đây đã sẵn sàng cho các bước phân tích tiếp theo. Curated Zone Lưu trữ dữ liệu đã được tổng hợp, chuẩn hóa, sẵn sàng cho phân tích chuyên sâu hoặc phục vụ báo cáo. Dữ liệu ở zone này thường có chất lượng cao, cấu trúc rõ ràng. Triển khai thực hiện: Truy cập giao diện AWS Management Console\nTìm và chọn S3 Trong giao diện S3 chọn Create bucket Trong giao diện Create bucket\nBucket name điền datalake-ecommerce-logs Sau đó chọn Create buckert Tạo thành công bucket Sau khi đã tạo thành công bucket chọn bucket vừa tạo\nChọn Create folder Nhập Folder name là data Tạo folder thành công Chọn folder data và cọn create folder\nChọn Create folder Trong giao diện Chọn Create folder, nhập raw Chọn create folder Tương tự với việc tạo processed và curated Tạo thành công 3 folder Đó là các bước chuẩn bị , các bước về sau sẽ làm trên IAM User đã tạo\n"
 },
 {
+	"uri": "//localhost:1313/vi/4-datacatalog/",
+	"title": "Data Catalog ",
+	"tags": [],
+	"description": "",
+	"content": "Nội dung Tạo Glue Crawler "
+},
+{
 	"uri": "//localhost:1313/vi/6-cleanup/",
 	"title": "Session Management",
 	"tags": [],
 	"description": "",
 	"content": "Working with Data Lake "
+},
+{
+	"uri": "//localhost:1313/vi/4-datacatalog/4.1-gluecrawler/",
+	"title": "",
+	"tags": [],
+	"description": "",
+	"content": ""
 },
 {
 	"uri": "//localhost:1313/vi/categories/",

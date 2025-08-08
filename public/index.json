@@ -49,6 +49,13 @@
 	"content": "Test\n"
 },
 {
+	"uri": "//localhost:1313/4-datacatalog/",
+	"title": "Data Catalog ",
+	"tags": [],
+	"description": "",
+	"content": "Nội dung "
+},
+{
 	"uri": "//localhost:1313/2-prerequiste/2.4-creates3/",
 	"title": "Preparation ",
 	"tags": [],
@@ -64,6 +71,27 @@
 },
 {
 	"uri": "//localhost:1313/2-prerequiste/2.1-createiamuser/",
+	"title": "",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/3-datacollectionanstorage/3.2-firehosestream/",
+	"title": "",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/3-datacollectionanstorage/3.3-kinesisdatagenerator/",
+	"title": "",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/4-datacatalog/4.1-gluecrawler/",
 	"title": "",
 	"tags": [],
 	"description": "",

@@ -93,6 +93,19 @@
                 href="//localhost:1313/2-prerequiste/2.3-createpolicy/"
                 />
   </url><url>
+    <loc>//localhost:1313/4-datacatalog/</loc>
+    <lastmod>2025-06-11T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/4-datacatalog/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/4-datacatalog/"
+                />
+  </url><url>
     <loc>//localhost:1313/2-prerequiste/2.4-creates3/</loc>
     <lastmod>2025-06-11T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -129,6 +142,42 @@
                 rel="alternate"
                 hreflang="en"
                 href="//localhost:1313/2-prerequiste/2.1-createiamuser/"
+                />
+  </url><url>
+    <loc>//localhost:1313/3-datacollectionanstorage/3.2-firehosestream/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/3-datacollectionanstorage/3.2-firehosestream/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/3-datacollectionanstorage/3.2-firehosestream/"
+                />
+  </url><url>
+    <loc>//localhost:1313/3-datacollectionanstorage/3.3-kinesisdatagenerator/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/3-datacollectionanstorage/3.3-kinesisdatagenerator/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/3-datacollectionanstorage/3.3-kinesisdatagenerator/"
+                />
+  </url><url>
+    <loc>//localhost:1313/4-datacatalog/4.1-gluecrawler/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/4-datacatalog/4.1-gluecrawler/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/4-datacatalog/4.1-gluecrawler/"
                 />
   </url><url>
     <loc>//localhost:1313/categories/</loc>
