@@ -1,5 +1,12 @@
 [
 {
+	"uri": "//localhost:1313/",
+	"title": "Data Lake",
+	"tags": [],
+	"description": "",
+	"content": "Working with Data Lake Overall In this lab, you will learn the basic concepts and practices of Data Lake Architecture using Amazon S3, AWS Lake Formation, and Athena.\nContent Introduction Preparation Data collection and storage Automated Cataloging with Glue + Data Catalog Analyze with Athena "
+},
+{
 	"uri": "//localhost:1313/1-introduce/",
 	"title": "Introduction",
 	"tags": [],
@@ -14,18 +21,18 @@
 	"content": "Test\n"
 },
 {
-	"uri": "//localhost:1313/",
-	"title": "Session Management",
-	"tags": [],
-	"description": "",
-	"content": "Working with Data Lake Overall In this lab, you will learn the basic concepts and practices of Data Lake Architecture using Amazon S3, AWS Lake Formation, and Athena.\nContent Introduction Preparation Connect to EC2 instance Manage session logs Port Forwarding Clean up resources "
-},
-{
 	"uri": "//localhost:1313/2-prerequiste/2.2-createiamrole/",
 	"title": "Create IAM Role",
 	"tags": [],
 	"description": "",
 	"content": "Create IAM Role In this step, we will proceed to create IAM Role. In this IAM Role, the policy AmazonSSMManagedInstanceCore will be assigned, this is the policy that allows the EC2 server to communicate with the Session Manager.\nGo to IAM service administration interface In the left navigation bar, click Roles. Click Create role. Click AWS service and click EC2. Click Next: Permissions. In the Search box, enter AmazonSSMManagedInstanceCore and press Enter to search for this policy. Click the policy AmazonSSMManagedInstanceCore. Click Next: Tags. Click Next: Review. Name the Role SSM-Role in Role Name Click Create Role . Next, we will make the connection to the EC2 servers we created with Session Manager.\n"
+},
+{
+	"uri": "//localhost:1313/4-datacatalog/4.2-gluejobetlprocessedzone/",
+	"title": "Glue Crawler cho Processed Zone ",
+	"tags": [],
+	"description": "",
+	"content": ""
 },
 {
 	"uri": "//localhost:1313/2-prerequiste/",
@@ -35,11 +42,25 @@
 	"content": "\rYou need to create 1 Linux instance on the public subnet and 1 Window instance on the private subnet to perform this lab.\nTo learn how to create EC2 instances and VPCs with public/private subnets, you can refer to the lab:\nAbout Amazon EC2 Works with Amazon VPC In order to use System Manager to manage our window instances in particular and our instances in general on AWS, we need to give permission to our instances to be able to work with System Manager. In this preparation, we will also proceed to create an IAM Role to grant permissions to instances that can work with System Manager.\nContent Prepare VPC and EC2 Create IAM Role "
 },
 {
+	"uri": "//localhost:1313/4-datacatalog/4.4-etlprocessedtocurated/",
+	"title": "Tạo Glue Job ETL → Processed Zone ",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
 	"uri": "//localhost:1313/3-datacollectionanstorage/",
 	"title": "Data collection and storage ",
 	"tags": [],
 	"description": "",
 	"content": "Test\n"
+},
+{
+	"uri": "//localhost:1313/4-datacatalog/4.3-gluecrawlerprocessedzone/",
+	"title": "Glue Crawler cho Processed Zone ",
+	"tags": [],
+	"description": "",
+	"content": ""
 },
 {
 	"uri": "//localhost:1313/2-prerequiste/2.3-createpolicy/",
@@ -63,11 +84,18 @@
 	"content": "Test\n"
 },
 {
-	"uri": "//localhost:1313/6-cleanup/",
-	"title": "Session Management",
+	"uri": "//localhost:1313/4-datacatalog/4.5-gluecrawlercuratedzone/",
+	"title": "Glue Crawler cho Curated Zone ",
 	"tags": [],
 	"description": "",
-	"content": "Working with Data Lake "
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/5-athena/",
+	"title": "Phân tích với Athena ",
+	"tags": [],
+	"description": "",
+	"content": ""
 },
 {
 	"uri": "//localhost:1313/2-prerequiste/2.1-createiamuser/",
@@ -91,7 +119,7 @@
 	"content": ""
 },
 {
-	"uri": "//localhost:1313/4-datacatalog/4.1-gluecrawler/",
+	"uri": "//localhost:1313/4-datacatalog/4.1-gluecrawlerrawzone/",
 	"title": "",
 	"tags": [],
 	"description": "",

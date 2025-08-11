@@ -15,6 +15,19 @@
                 href="//localhost:1313/vi/2-prerequiste/2.1-createiamuser/"
                 />
   </url><url>
+    <loc>//localhost:1313/vi/</loc>
+    <lastmod>2025-06-11T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/"
+                />
+  </url><url>
     <loc>//localhost:1313/vi/3-datacollectionanstorage/3.1-s3data/</loc>
     <lastmod>2025-06-11T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -41,17 +54,17 @@
                 href="//localhost:1313/vi/1-introduce/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/</loc>
+    <loc>//localhost:1313/vi/4-datacatalog/4.1-gluecrawlerrawzone/</loc>
     <lastmod>2025-06-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/"
+                href="//localhost:1313/4-datacatalog/4.1-gluecrawlerrawzone/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/"
+                href="//localhost:1313/vi/4-datacatalog/4.1-gluecrawlerrawzone/"
                 />
   </url><url>
     <loc>//localhost:1313/vi/2-prerequiste/</loc>
@@ -80,6 +93,19 @@
                 href="//localhost:1313/vi/3-datacollectionanstorage/3.2-firehosestream/"
                 />
   </url><url>
+    <loc>//localhost:1313/vi/4-datacatalog/4.2-gluejobetlprocessedzone/</loc>
+    <lastmod>2025-06-11T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/4-datacatalog/4.2-gluejobetlprocessedzone/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/4-datacatalog/4.2-gluejobetlprocessedzone/"
+                />
+  </url><url>
     <loc>//localhost:1313/vi/2-prerequiste/2.2-createiamrole/</loc>
     <lastmod>2025-06-11T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -104,6 +130,19 @@
                 rel="alternate"
                 hreflang="vi"
                 href="//localhost:1313/vi/3-datacollectionanstorage/3.3-kinesisdatagenerator/"
+                />
+  </url><url>
+    <loc>//localhost:1313/vi/4-datacatalog/4.3-gluecrawlerprocessedzone/</loc>
+    <lastmod>2025-06-11T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/4-datacatalog/4.3-gluecrawlerprocessedzone/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/4-datacatalog/4.3-gluecrawlerprocessedzone/"
                 />
   </url><url>
     <loc>//localhost:1313/vi/2-prerequiste/2.3-createpolicy/</loc>
@@ -132,19 +171,6 @@
                 href="//localhost:1313/vi/3-datacollectionanstorage/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/2-prerequiste/2.4-creates3/</loc>
-    <lastmod>2025-06-11T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/2-prerequiste/2.4-creates3/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/2-prerequiste/2.4-creates3/"
-                />
-  </url><url>
     <loc>//localhost:1313/vi/4-datacatalog/</loc>
     <lastmod>2025-06-11T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -158,29 +184,56 @@
                 href="//localhost:1313/vi/4-datacatalog/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/6-cleanup/</loc>
+    <loc>//localhost:1313/vi/2-prerequiste/2.4-creates3/</loc>
     <lastmod>2025-06-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/6-cleanup/"
+                href="//localhost:1313/2-prerequiste/2.4-creates3/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/6-cleanup/"
+                href="//localhost:1313/vi/2-prerequiste/2.4-creates3/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/4-datacatalog/4.1-gluecrawler/</loc>
+    <loc>//localhost:1313/vi/4-datacatalog/4.4-etlprocessedtocurated/</loc>
+    <lastmod>2025-06-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/4-datacatalog/4.1-gluecrawler/"
+                href="//localhost:1313/4-datacatalog/4.4-etlprocessedtocurated/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/4-datacatalog/4.1-gluecrawler/"
+                href="//localhost:1313/vi/4-datacatalog/4.4-etlprocessedtocurated/"
+                />
+  </url><url>
+    <loc>//localhost:1313/vi/4-datacatalog/4.5-gluecrawlercuratedzone/</loc>
+    <lastmod>2025-06-11T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/4-datacatalog/4.5-gluecrawlercuratedzone/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/4-datacatalog/4.5-gluecrawlercuratedzone/"
+                />
+  </url><url>
+    <loc>//localhost:1313/vi/5-athena/</loc>
+    <lastmod>2025-06-11T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/5-athena/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/5-athena/"
                 />
   </url><url>
     <loc>//localhost:1313/vi/categories/</loc>

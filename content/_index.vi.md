@@ -1,5 +1,5 @@
 ---
-title : "Session Management"
+title : "Data Lake"
 weight : 1 
 chapter : false
 ---
@@ -15,7 +15,7 @@ Trong bài lab này, bạn sẽ tìm hiểu các khái niệm cơ bản và th�
 
  1. [Giới thiệu](1-introduce/)
  2. [Các bước chuẩn bị](2-Prerequiste/)
- 3. [Tạo kết nối đến máy chủ EC2](3-Accessibilitytoinstance/)
- 4. [Quản lý session logs](4-s3log/)
- 5. [Port Forwarding](5-Portfwd/)
- 6. [Dọn dẹp tài nguyên](6-cleanup/)
+ 3. [Thu thập và lưu trữ dữ liệu](3-Datacollectionanstorage/)
+ 4. [Automated Cataloging với Glue + Data Catalog](4-DataCatalog/)
+ 5. [Phân tích với Athena](5-Athena/)
+

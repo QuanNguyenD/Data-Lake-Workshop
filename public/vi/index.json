@@ -7,6 +7,13 @@
 	"content": "Tạo IAM User Truy cập giao diện AWS Management Console Tìm và chọn IAM Trong giao diện IAM chọn User Trong giao diện IAM User chọn Create User Trong giao diện tạo IAM user chúng ta làm theo các bước sau:\nUser name điền data-lake-admin Tick vào Provide user access to the AWS Management Console - optional Trong phần User type chọn I want to create an IAM user Tại phần Console password bạn có thể để chọn tạo mật khẩu ngẫu nhiên hoạc theo cách thủ công Trong phần Set permissions chọn Attach policies directly và thêm các Permissions policies sau:\nAmazonS3FullAccess AmazonAthenaFullAccess AWSGlueConsoleFullAccess AWSLakeFormationDataAdmin CloudWatchLogsFullAccess Sau đó chọn Next và chọn create user trong phần Review and create\nTrong phần Retrieve password bạn có thể chọn Download .csv file về máy và lưu nó ở một nơi an toàn. "
 },
 {
+	"uri": "//localhost:1313/vi/",
+	"title": "Data Lake",
+	"tags": [],
+	"description": "",
+	"content": "Làm việc với Data Lake Tổng quan Trong bài lab này, bạn sẽ tìm hiểu các khái niệm cơ bản và thực hành về Data Lake Architecture sử dụng Amazon S3, AWS Lake Formation và Athena\nNội dung Giới thiệu Các bước chuẩn bị Thu thập và lưu trữ dữ liệu Automated Cataloging với Glue + Data Catalog Phân tích với Athena "
+},
+{
 	"uri": "//localhost:1313/vi/3-datacollectionanstorage/3.1-s3data/",
 	"title": "Đưa dữ liệu vào S3 bucket ",
 	"tags": [],
@@ -21,11 +28,11 @@
 	"content": "Data Lake là một hệ thống lưu trữ dữ liệu lớn, cho phép lưu trữ dữ liệu ở dạng thô (raw data) từ nhiều nguồn khác nhau như cơ sở dữ liệu, file log, IoT, mạng xã hội,\u0026hellip; Dữ liệu trong Data Lake có thể là dữ liệu có cấu trúc (structured), bán cấu trúc (semi-structured) hoặc không cấu trúc (unstructured).\nĐặc điểm của Data Lake:\nLưu trữ dữ liệu với dung lượng lớn, chi phí thấp. Dữ liệu được lưu ở dạng gốc, chưa qua xử lý. Hỗ trợ phân tích dữ liệu, machine learning, big data. Linh hoạt trong việc truy xuất và xử lý dữ liệu. Ứng dụng của Data Lake:\nPhân tích dữ liệu lớn (Big Data Analytics). Lưu trữ dữ liệu phục vụ AI, Machine Learning. Tích hợp dữ liệu từ nhiều nguồn khác nhau. Một số nền tảng Data Lake phổ biến:: Amazon S3, Azure Data Lake, Google Cloud Storage, Hadoop HDFS.\n"
 },
 {
-	"uri": "//localhost:1313/vi/",
-	"title": "Session Management",
+	"uri": "//localhost:1313/vi/4-datacatalog/4.1-gluecrawlerrawzone/",
+	"title": "Glue Crawler cho Raw Zone ",
 	"tags": [],
 	"description": "",
-	"content": "Làm việc với Data Lake Tổng quan Trong bài lab này, bạn sẽ tìm hiểu các khái niệm cơ bản và thực hành về Data Lake Architecture sử dụng Amazon S3, AWS Lake Formation và Athena\nNội dung Giới thiệu Các bước chuẩn bị Tạo kết nối đến máy chủ EC2 Quản lý session logs Port Forwarding Dọn dẹp tài nguyên "
+	"content": "Các bước thực hiện Truy cập giao diện AWS Management Console\nTìm và chọn AWS Glue Chọn Data Catalog -\u0026gt; Database\nBấm Add database\nNhập:\nDatabase name: raw_db (Optional) Description: Glue database for raw logs from user behavior Nhấn Create\nVào tab Crawlers → Bấm Create crawler\nNhập: Name: raw-user-log-crawler rồi ấn Next Choose data source: Data stores Location: Chọn S3 Nhập: s3://data-lake-raw-user-log/ (hoặc bucket bạn đã tạo) Chọn Crawl new sub-folders only Bấm Next IAM Role cho crawler\nChọn IAM role đã có quyền truy cập S3 và Glue Hoặc bấm \u0026ldquo;Create new IAM role\u0026rdquo; nếu cần Bấm Next Output (Đầu ra)\nChọn database: ecommerce_raw_db Bấm Next → Finish Kiểm tra lại cấu hình và chọn Create crawler. Tạo Crawler thành công. Sau đó, bạn chọn Run crawler. Run crawler thành công\nKiểm tra kết quả Glue Table Vào Glue → Tables → chọn database ecommerce_raw_db Xem bảng đã được tạo Kiểm tra: column names, types ormat: JSON Bạn có thể sửa tên table nếu cần "
 },
 {
 	"uri": "//localhost:1313/vi/2-prerequiste/",
@@ -42,6 +49,13 @@
 	"content": "Tạo Firehose Stream Chuẩn bị\nGắn thêm các quyền sau vào IAM User AmazonKinesisFullAccess, AmazonKinesisFirehoseFullAccess, IAMFullAccess. Truy cập Kinesis Vào AmaZone Data Firehose Trong Firehose streams chọn Create Firehose stream Trong Create Firehose stream\nTrong Sourse chọn Direct PUT Trong Destination chọn Amazon S3 Trong Firehose stream name điền PUT-S3-UserLogsToS3 Trong Destination settings\nChọn S3 bucket đã tạo trước đó S3 bucket prefix nhập data/raw/user-logs/ S3 bucket error output prefix nhập data/error/user-logs/ Trong phần Buffer hins, compression, file extention and encryption\nBuffer size nhập 1. Buffer interval nhập 60. Trong bước Advanced settings\nService access chọn Create or update IAM role Sau đó chọn Create delivery stream Nếu trong bước trên bị lỗi IAM role khi ấn Create delivery stream bạn chỉ cần ấn lại thêm một lần nữa là được :))\nTạo thành công Firehose streams "
 },
 {
+	"uri": "//localhost:1313/vi/4-datacatalog/4.2-gluejobetlprocessedzone/",
+	"title": "Tạo Glue Job ETL → Processed Zone ",
+	"tags": [],
+	"description": "",
+	"content": "Các bước thực hiện Truy cập giao diện AWS Management Console\nTìm và chọn AWS Glue Chọn Data Catalog -\u0026gt; Database\n3. Chọn Add database\nNhập tên Tên: processed_db Tạo Glue Job (ETL Raw → Processed) Chuẩn bị Bạn cần đã tạo: IAM Role có quyền truy cập S3, Glue, Lake Formation (ví dụ: AWSGlueServiceRole-DataLake) Glue Database raw_db (đã có từ bước trước) Crawler đã chạy cho Raw Zone → có table JSON Bucket S3 Processed Zone Tạo Glue Job (ETL Raw → Processed) AWS Console → AWS Glue → ETL Jobs → “script editor”. Tại Engine chọn Spark Options chọn Upload script Tiến hành tải file script tại đây sau đó upload và nhấn Create Script Tại phần tiếp theo chọn Jobs details Name etl_raw_to_processed IAM role chọn role Glue có quyền với S3/Lake Formation. Tạo tành công Bấm Run, Sau khi chạy xong vào S3 để kiểm tra "
+},
+{
 	"uri": "//localhost:1313/vi/2-prerequiste/2.2-createiamrole/",
 	"title": "Tạo IAM Role",
 	"tags": [],
@@ -54,6 +68,13 @@
 	"tags": [],
 	"description": "",
 	"content": "Các bước thực hiện Trước tiên hãy thêm IAM role cho Iam users\nTruy cập AWS Management Console. Tìm CloudFormation. Chọn CloudFormation Trong giao diện CloudFormation chọn Create stack Tiến hành tải file setup\nTrong giao diện Create stack:\nChoose an existing template Trong phần Specify template chọn Upload a template file Trong phần Choose file chọn file đa tải về trước đó Ấn Next Trong giao diện Specify stack details\nStack name nhập Kinesis-Data-Generator-Cognito-User User name nhập admin Password nhâp mật khẩu của bạn Chọn Next Tiếp tuc chọn Next và Submit\nTạo thành công Trong giao diện Stack chọn Output và chọn KinesisDataGeneratorUrl Tiến hành nhập mật khẩu và tên đăng nhập\nTrong giao diện Amazon Kinesis Data Generator\nRecord per second nhập 2000\nRecord template chọn template 1\nNhập đoạn mã sau\n{\r\u0026#34;order_id\u0026#34;: \u0026#34;{{random.uuid}}\u0026#34;,\r\u0026#34;customer\u0026#34;: {{random.arrayElement([\r\u0026#34;\\\u0026#34;Alice\\\u0026#34;\u0026#34;, \u0026#34;\\\u0026#34;Bob\\\u0026#34;\u0026#34;, \u0026#34;\\\u0026#34;Charlie\\\u0026#34;\u0026#34;, \u0026#34;\\\u0026#34;Diana\\\u0026#34;\u0026#34;, \u0026#34;\\\u0026#34;Eve\\\u0026#34;\u0026#34;,\r\u0026#34;\\\u0026#34;Frank\\\u0026#34;\u0026#34;, \u0026#34;\\\u0026#34;Grace\\\u0026#34;\u0026#34;, \u0026#34;\\\u0026#34;Hannah\\\u0026#34;\u0026#34;, \u0026#34;\\\u0026#34;Ivan\\\u0026#34;\u0026#34;, \u0026#34;\\\u0026#34;Jack\\\u0026#34;\u0026#34;,\r\u0026#34;\\\u0026#34;Karen\\\u0026#34;\u0026#34;, \u0026#34;\\\u0026#34;Leo\\\u0026#34;\u0026#34;, \u0026#34;\\\u0026#34;Mia\\\u0026#34;\u0026#34;, \u0026#34;\\\u0026#34;Nina\\\u0026#34;\u0026#34;, \u0026#34;\\\u0026#34;Oscar\\\u0026#34;\u0026#34;\r])}},\r\u0026#34;amount\u0026#34;: {{random.number({ \u0026#34;min\u0026#34;: 50, \u0026#34;max\u0026#34;: 1000, \u0026#34;precision\u0026#34;: 0.01 })}},\r\u0026#34;timestamp\u0026#34;: \u0026#34;{{date.now(\u0026#34;iso\u0026#34;)}}\u0026#34;\r} Sau đó chon send data, và sau khi send dc 100000 thì dừng Kiểm tra lại trong S3 xem đã có dữ liệu chưa Như vây dữ liệu đa đi vào S3\n"
+},
+{
+	"uri": "//localhost:1313/vi/4-datacatalog/4.3-gluecrawlerprocessedzone/",
+	"title": "Glue Crawler cho Processed Zone ",
+	"tags": [],
+	"description": "",
+	"content": "Tạo Glue Crawler cho Processed Zone Truy cập giao diện AWS Management Console\nTìm và chọn AWS Glue Chọn Crawlers → Add Crawler Phần Name nhập : processed-user-log-crawler, chọn Next\nTrong Data sources chọn Add a data sources\nTrong phần S3 path chọn đường dẫn S3 và Add an S3 data source. Chọn Next\n7. Chọn IAM role đã có quyền truy cập S3 và Glue Hoặc bấm \u0026ldquo;Create new IAM role\u0026rdquo; nếu cần 8. Chọn next 9. Phần Target database chọn processed_db 10. Kiểm tra lại cấu hình và chọn Create crawler 11. Đã tạo thành công\n12. Chọn Run crawler → tạo table trong catalog Run crawler thành công Kiểm tra kết quả Glue Table Vào Glue → Tables → chọn database processed_db Bạn sẽ thấy thêm 1 Column name là log_date "
 },
 {
 	"uri": "//localhost:1313/vi/2-prerequiste/2.3-createpolicy/",
@@ -70,6 +91,13 @@
 	"content": " Trong phần này chúng ta sẽ tiến hành lưu dữ liệu vào S3 Trước tiên bạn hãy đăng nhập vào tài khoản IAM user đa tạo trước đó để tiến hành bài làm. Nội dung Thu thập dữ liệu vào S3 Tạo Firehose Stream "
 },
 {
+	"uri": "//localhost:1313/vi/4-datacatalog/",
+	"title": "Automated Cataloging với Glue + Data Catalog ",
+	"tags": [],
+	"description": "",
+	"content": "Nội dung Tạo Glue Crawler Glue Crawler cho Processed Zone "
+},
+{
 	"uri": "//localhost:1313/vi/2-prerequiste/2.4-creates3/",
 	"title": "Chuẩn bị S3",
 	"tags": [],
@@ -77,25 +105,25 @@
 	"content": "Chuẩn bị S3 bucket để lưu trừ dữ liệu: Amazon S3 (Simple Storage Service) là dịch vụ lưu trữ đối tượng phổ biến, thường được sử dụng làm nền tảng lưu trữ cho Data Lake. Việc tạo một bucket S3 giúp bạn lưu trữ dữ liệu thô, bán cấu trúc hoặc không cấu trúc từ nhiều nguồn khác nhau, phục vụ cho phân tích dữ liệu lớn.\nỞ trong bài này chúng ta sẽ chia dữ liệu thường được phân chia thành 3 vùng (zone) để quản lý và xử lý hiệu quả:\nRaw Zone: Lưu trữ dữ liệu gốc, chưa qua xử lý từ các nguồn khác nhau (database, logs, IoT,\u0026hellip;). Dữ liệu ở dạng thô, chưa chuẩn hóa hoặc làm sạch. Processed Zone: Lưu trữ dữ liệu đã được xử lý sơ bộ như làm sạch, chuyển đổi định dạng, loại bỏ lỗi. Dữ liệu ở đây đã sẵn sàng cho các bước phân tích tiếp theo. Curated Zone Lưu trữ dữ liệu đã được tổng hợp, chuẩn hóa, sẵn sàng cho phân tích chuyên sâu hoặc phục vụ báo cáo. Dữ liệu ở zone này thường có chất lượng cao, cấu trúc rõ ràng. Triển khai thực hiện: Truy cập giao diện AWS Management Console\nTìm và chọn S3 Trong giao diện S3 chọn Create bucket Trong giao diện Create bucket\nBucket name điền datalake-ecommerce-logs Sau đó chọn Create buckert Tạo thành công bucket Sau khi đã tạo thành công bucket chọn bucket vừa tạo\nChọn Create folder Nhập Folder name là data Tạo folder thành công Chọn folder data và cọn create folder\nChọn Create folder Trong giao diện Chọn Create folder, nhập raw Chọn create folder Tương tự với việc tạo processed và curated Tạo thành công 3 folder Đó là các bước chuẩn bị , các bước về sau sẽ làm trên IAM User đã tạo\n"
 },
 {
-	"uri": "//localhost:1313/vi/4-datacatalog/",
-	"title": "Data Catalog ",
+	"uri": "//localhost:1313/vi/4-datacatalog/4.4-etlprocessedtocurated/",
+	"title": "Tạo Glue Job: ETL từ Processed →Curated ",
 	"tags": [],
 	"description": "",
-	"content": "Nội dung Tạo Glue Crawler "
+	"content": "Các bước thực hiện Truy cập giao diện AWS Management Console\nTìm và chọn AWS Glue Chọn Data Catalog -\u0026gt; Database Chọn Add database\nNhập name: curated_db Nhấn Create database Tạo thành công Tạo Glue Job: ETL từ Processed → Curated AWS Console → AWS Glue → ETL Jobs → “script editor”. Options chọn Upload script Tiến hành tải file script tại đây sau đó upload và nhấn Create Script 10. Tại phần tiếp theo chọn Jobs details\nJob name:\tetl_processed_to_curated IAM Role : AWSGlueServiceRole-submit-crawler Type:\tSpark Tạo thành công Bấm Run 13. Sau khi chạy thành công vào S3 kiểm tra\n"
 },
 {
-	"uri": "//localhost:1313/vi/6-cleanup/",
-	"title": "Session Management",
+	"uri": "//localhost:1313/vi/4-datacatalog/4.5-gluecrawlercuratedzone/",
+	"title": "Glue Crawler cho Curated Zone ",
 	"tags": [],
 	"description": "",
-	"content": "Working with Data Lake "
+	"content": "Tạo Glue Crawler cho Curated Zone Truy cập giao diện AWS Management Console\nTìm và chọn AWS Glue Chọn Crawlers → Add Crawler\nPhần S3 chọn : s3://your-curated-bucket/curated/user_logs/, sau đó chọn Add an S3 data source Chọn Next\nChọn IAM role đã có quyền truy cập S3 và Glue Hoặc bấm \u0026ldquo;Create new IAM role\u0026rdquo; nếu cần sau dó chọn Next\nPhần Target database chọn curated_db sau đó chon Next Kiểm tra lại cấu hình và chọn Create crawler Tạo thành công Chọn Run crawler Sau khi chạy thành công kiểm tra kết quả Glue Table "
 },
 {
-	"uri": "//localhost:1313/vi/4-datacatalog/4.1-gluecrawler/",
-	"title": "",
+	"uri": "//localhost:1313/vi/5-athena/",
+	"title": "Phân tích với Athena ",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": "Phân tích với Athena Truy cập giao diện AWS Management Console Truy cập Athena Trong giao diện Athena: Tại mục Data Source, chọn AwsDataCatalog Tại mục Database, chọn curated_db Thực hiện câu truy vấn sau SELECT * FROM \u0026quot;curated_db\u0026quot;.\u0026quot;user_logs\u0026quot; limit 10;\nNhấn Run Query\nChờ đến khi trạng thái chuyển thành Complete\nXem kết quả của câu truy vấn\nThực hiện câu truy vấn khác SELECT customer,count(amount_value) FROM \u0026#34;curated_db\u0026#34;.\u0026#34;user_logs\u0026#34; GROUP BY customer ORDER BY customer limit 10; "
 },
 {
 	"uri": "//localhost:1313/vi/categories/",

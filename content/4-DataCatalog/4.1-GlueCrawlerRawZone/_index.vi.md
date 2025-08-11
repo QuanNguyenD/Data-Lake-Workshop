@@ -1,9 +1,9 @@
 ---
-title : "Tạo Glue Craler "
+title : "Glue Crawler cho Raw Zone "
 date :  "2025-06-11"
 weight : 1
 chapter : false
-pre : " <b> 4. </b> "
+pre : " <b> 4.1 </b> "
 ---
 
 ### Các bước thực hiện 
