@@ -12,21 +12,21 @@
     <title>Glue Crawler cho Raw Zone  :: AWS System Manager</title>
 
     
-    <link href="/css/nucleus.css?1754907467" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1754907467" rel="stylesheet">
-    <link href="/css/hybrid.css?1754907467" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1754907467" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1754907467" rel="stylesheet">
-    <link href="/css/auto-complete.css?1754907467" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1754907467" rel="stylesheet">
-    <link href="/css/theme.css?1754907467" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1754907467" rel="stylesheet">
+    <link href="/css/nucleus.css?1754917189" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1754917189" rel="stylesheet">
+    <link href="/css/hybrid.css?1754917189" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1754917189" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1754917189" rel="stylesheet">
+    <link href="/css/auto-complete.css?1754917189" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1754917189" rel="stylesheet">
+    <link href="/css/theme.css?1754917189" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1754917189" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1754907467" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1754917189" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1754907467"></script>
+    <script src="/js/jquery-3.3.1.min.js?1754917189"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1754907467"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1754907467"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1754917189"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1754917189"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1754907467"></script>
+<script type="text/javascript" src="/js/search.js?1754917189"></script>
 
     
   </div>
@@ -174,34 +174,6 @@
         ">
       <a href="/vi/2-prerequiste/2.2-createiamrole/">
            <b> 2.2 </b> Tạo IAM Role
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/vi/2-prerequiste/2.3-createpolicy/" title="Tạo IAM Policiy" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/vi/2-prerequiste/2.3-createpolicy/">
-           <b> 2.3 </b> Tạo IAM Policiy
           
             <i class="fas fa-check read-icon"></i>
           
@@ -558,13 +530,13 @@
  
   
     
-    <li data-nav-id="/vi/6-cleanup/" title="Session Management" class="dd-item 
+    <li data-nav-id="/vi/5-athena/" title="Phân tích với Athena " class="dd-item 
         
         
         
         ">
-      <a href="/vi/6-cleanup/">
-          Session Management
+      <a href="/vi/5-athena/">
+           <b> 5. </b> Phân tích với Athena 
           
             <i class="fas fa-check read-icon"></i>
           
@@ -768,14 +740,14 @@
 <p>Truy cập giao diện <a href="https://console.aws.amazon.com">AWS Management Console</a></p>
 <ul>
 <li>Tìm và chọn <strong>AWS Glue</strong>
-<img src="/images/3.firehose/0022-fire.png" alt="Fire"></li>
+<img src="/Data-Lake-Workshop/images/3.firehose/0022-fire.png" alt="Fire"></li>
 </ul>
 </li>
 <li>
 <p>Chọn Data Catalog -&gt; Database</p>
 </li>
 </ol>
-<p><img src="/images/3.firehose/0023-fire.png" alt="Fire"></p>
+<p><img src="/Data-Lake-Workshop/images/3.firehose/0023-fire.png" alt="Fire"></p>
 <ol start="3">
 <li>
 <p>Bấm <strong>Add database</strong></p>
@@ -794,11 +766,11 @@
 <p>Vào tab <strong>Crawlers</strong> → Bấm <strong>Create crawler</strong></p>
 </li>
 </ol>
-<p><img src="/images/3.firehose/0024-fire.png" alt="Fire"></p>
+<p><img src="/Data-Lake-Workshop/images/3.firehose/0024-fire.png" alt="Fire"></p>
 <ol start="7">
 <li>Nhập: <strong>Name</strong>: <code>raw-user-log-crawler</code> rồi ấn <strong>Next</strong></li>
 </ol>
-<p><img src="/images/3.firehose/0025-fire.png" alt="Fire"></p>
+<p><img src="/Data-Lake-Workshop/images/3.firehose/0025-fire.png" alt="Fire"></p>
 <ol start="8">
 <li>Choose data source: Data stores</li>
 <li>Location:
@@ -809,41 +781,41 @@
 </ul>
 </li>
 </ol>
-<p><img src="/images/3.firehose/0026-fire.png" alt="Fire"></p>
+<p><img src="/Data-Lake-Workshop/images/3.firehose/0026-fire.png" alt="Fire"></p>
 <ol start="10">
 <li>Bấm Next
-<img src="/images/3.firehose/0027-fire.png" alt="Fire"></li>
+<img src="/Data-Lake-Workshop/images/3.firehose/0027-fire.png" alt="Fire"></li>
 </ol>
 <p><strong>IAM Role cho crawler</strong></p>
 <ol start="11">
 <li>Chọn IAM role đã có quyền truy cập S3 và Glue  Hoặc bấm &ldquo;Create new IAM role&rdquo; nếu cần</li>
 </ol>
-<p><img src="/images/3.firehose/0028-fire.png" alt="Fire"></p>
+<p><img src="/Data-Lake-Workshop/images/3.firehose/0028-fire.png" alt="Fire"></p>
 <ol start="12">
 <li>Bấm <strong>Next</strong></li>
 </ol>
-<p><img src="/images/3.firehose/0029-fire.png" alt="Fire"></p>
+<p><img src="/Data-Lake-Workshop/images/3.firehose/0029-fire.png" alt="Fire"></p>
 <p><strong>Output (Đầu ra)</strong></p>
 <ol start="13">
 <li>Chọn database: ecommerce_raw_db</li>
 <li>Bấm Next → Finish</li>
 </ol>
-<p><img src="/images/3.firehose/0030-fire.png" alt="Fire"></p>
+<p><img src="/Data-Lake-Workshop/images/3.firehose/0030-fire.png" alt="Fire"></p>
 <ol start="15">
 <li>Kiểm tra lại cấu hình và chọn Create crawler.</li>
 </ol>
-<p><img src="/images/3.firehose/0031-fire.png" alt="Fire"></p>
+<p><img src="/Data-Lake-Workshop/images/3.firehose/0031-fire.png" alt="Fire"></p>
 <ol start="16">
 <li>
 <p>Tạo Crawler thành công. Sau đó, bạn chọn Run crawler.
-<img src="/images/3.firehose/0032-fire.png" alt="Fire"></p>
+<img src="/Data-Lake-Workshop/images/3.firehose/0032-fire.png" alt="Fire"></p>
 </li>
 <li>
 <p>Run crawler thành công</p>
 </li>
 </ol>
-<p><img src="/images/3.firehose/0033-fire.png" alt="Fire">
-<img src="/images/3.firehose/0034-fire.png" alt="Fire"></p>
+<p><img src="/Data-Lake-Workshop/images/3.firehose/0033-fire.png" alt="Fire">
+<img src="/Data-Lake-Workshop/images/3.firehose/0034-fire.png" alt="Fire"></p>
 <ol start="18">
 <li>Kiểm tra kết quả Glue Table
 <ul>
@@ -855,7 +827,7 @@
 </ul>
 </li>
 </ol>
-<p><img src="/images/3.firehose/0035-fire.png" alt="Fire"></p>
+<p><img src="/Data-Lake-Workshop/images/3.firehose/0035-fire.png" alt="Fire"></p>
 
 
 
@@ -924,22 +896,6 @@
                     
                     
 
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
                         
             
@@ -1199,19 +1155,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1754907467"></script>
-    <script src="/js/perfect-scrollbar.min.js?1754907467"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1754907467"></script>
-    <script src="/js/jquery.sticky.js?1754907467"></script>
-    <script src="/js/featherlight.min.js?1754907467"></script>
-    <script src="/js/highlight.pack.js?1754907467"></script>
+    <script src="/js/clipboard.min.js?1754917189"></script>
+    <script src="/js/perfect-scrollbar.min.js?1754917189"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1754917189"></script>
+    <script src="/js/jquery.sticky.js?1754917189"></script>
+    <script src="/js/featherlight.min.js?1754917189"></script>
+    <script src="/js/highlight.pack.js?1754917189"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1754907467"></script>
-    <script src="/js/learn.js?1754907467"></script>
-    <script src="/js/hugo-learn.js?1754907467"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1754917189"></script>
+    <script src="/js/learn.js?1754917189"></script>
+    <script src="/js/hugo-learn.js?1754917189"></script>
 
-    <link href="/mermaid/mermaid.css?1754907467" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1754907467"></script>
+    <link href="/mermaid/mermaid.css?1754917189" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1754917189"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

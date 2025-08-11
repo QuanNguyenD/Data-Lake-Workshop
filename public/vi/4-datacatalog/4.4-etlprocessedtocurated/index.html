@@ -12,21 +12,21 @@
     <title>Tạo Glue Job: ETL từ Processed →Curated  :: AWS System Manager</title>
 
     
-    <link href="/css/nucleus.css?1754907467" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1754907467" rel="stylesheet">
-    <link href="/css/hybrid.css?1754907467" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1754907467" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1754907467" rel="stylesheet">
-    <link href="/css/auto-complete.css?1754907467" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1754907467" rel="stylesheet">
-    <link href="/css/theme.css?1754907467" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1754907467" rel="stylesheet">
+    <link href="/css/nucleus.css?1754917864" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1754917864" rel="stylesheet">
+    <link href="/css/hybrid.css?1754917864" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1754917864" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1754917864" rel="stylesheet">
+    <link href="/css/auto-complete.css?1754917864" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1754917864" rel="stylesheet">
+    <link href="/css/theme.css?1754917864" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1754917864" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1754907467" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1754917864" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1754907467"></script>
+    <script src="/js/jquery-3.3.1.min.js?1754917864"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1754907467"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1754907467"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1754917864"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1754917864"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1754907467"></script>
+<script type="text/javascript" src="/js/search.js?1754917864"></script>
 
     
   </div>
@@ -174,34 +174,6 @@
         ">
       <a href="/vi/2-prerequiste/2.2-createiamrole/">
            <b> 2.2 </b> Tạo IAM Role
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/vi/2-prerequiste/2.3-createpolicy/" title="Tạo IAM Policiy" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/vi/2-prerequiste/2.3-createpolicy/">
-           <b> 2.3 </b> Tạo IAM Policiy
           
             <i class="fas fa-check read-icon"></i>
           
@@ -558,13 +530,13 @@
  
   
     
-    <li data-nav-id="/vi/6-cleanup/" title="Session Management" class="dd-item 
+    <li data-nav-id="/vi/5-athena/" title="Phân tích với Athena " class="dd-item 
         
         
         
         ">
-      <a href="/vi/6-cleanup/">
-          Session Management
+      <a href="/vi/5-athena/">
+           <b> 5. </b> Phân tích với Athena 
           
             <i class="fas fa-check read-icon"></i>
           
@@ -769,12 +741,12 @@
 <p>Truy cập giao diện <a href="https://console.aws.amazon.com">AWS Management Console</a></p>
 <ul>
 <li>Tìm và chọn <strong>AWS Glue</strong>
-<img src="/images/3.firehose/0022-fire.png" alt="Fire"></li>
+<img src="/Data-Lake-Workshop/images/3.firehose/0022-fire.png" alt="Fire"></li>
 </ul>
 </li>
 <li>
 <p>Chọn Data Catalog -&gt; Database
-<img src="/images/5.glue/0020-glue.png" alt="Glue"></p>
+<img src="/Data-Lake-Workshop/images/5.glue/0020-glue.png" alt="Glue"></p>
 </li>
 <li>
 <p>Chọn Add database</p>
@@ -783,11 +755,11 @@
 <ul>
 <li>Nhập <strong>name</strong>: <code>curated_db</code></li>
 <li>Nhấn Create database
-<img src="/images/5.glue/0021-glue.png" alt="Glue"></li>
+<img src="/Data-Lake-Workshop/images/5.glue/0021-glue.png" alt="Glue"></li>
 </ul>
 <ol start="4">
 <li>Tạo thành công
-<img src="/images/5.glue/0022-glue.png" alt="Glue"></li>
+<img src="/Data-Lake-Workshop/images/5.glue/0022-glue.png" alt="Glue"></li>
 </ol>
 <h3 id="tạo-glue-job-etl-từ-processed--curated">Tạo Glue Job: ETL từ Processed → Curated</h3>
 <ol start="6">
@@ -795,24 +767,24 @@
 <li>Options chọn Upload script</li>
 <li>Tiến hành tải file script <a href="https://raw.githubusercontent.com/QuanNguyenD/FcjWS/refs/heads/main/import_sys_cru.py">tại đây</a> sau đó upload và nhấn Create Script</li>
 </ol>
-<p><img src="/images/5.glue/0023-glue.png" alt="Glue">
+<p><img src="/Data-Lake-Workshop/images/5.glue/0023-glue.png" alt="Glue">
 10. Tại phần tiếp theo chọn <strong>Jobs details</strong></p>
 <ul>
 <li>Job name:	etl_processed_to_curated</li>
 <li>IAM Role    : AWSGlueServiceRole-submit-crawler</li>
 <li>Type:	Spark
-<img src="/images/5.glue/0024-glue.png" alt="Glue"></li>
+<img src="/Data-Lake-Workshop/images/5.glue/0024-glue.png" alt="Glue"></li>
 </ul>
 <ol start="11">
 <li>Tạo thành công</li>
 </ol>
-<p><img src="/images/5.glue/0025-glue.png" alt="Glue"></p>
+<p><img src="/Data-Lake-Workshop/images/5.glue/0025-glue.png" alt="Glue"></p>
 <ol start="12">
 <li>Bấm Run</li>
 </ol>
-<p><img src="/images/5.glue/0026-glue.png" alt="Glue">
+<p><img src="/Data-Lake-Workshop/images/5.glue/0026-glue.png" alt="Glue">
 13. Sau khi chạy thành công vào S3 kiểm tra</p>
-<p><img src="/images/5.glue/0027-glue.png" alt="Glue"></p>
+<p><img src="/Data-Lake-Workshop/images/5.glue/0027-glue.png" alt="Glue"></p>
 
 
 
@@ -881,22 +853,6 @@
                     
                     
 
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
                         
             
@@ -1159,19 +1115,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1754907467"></script>
-    <script src="/js/perfect-scrollbar.min.js?1754907467"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1754907467"></script>
-    <script src="/js/jquery.sticky.js?1754907467"></script>
-    <script src="/js/featherlight.min.js?1754907467"></script>
-    <script src="/js/highlight.pack.js?1754907467"></script>
+    <script src="/js/clipboard.min.js?1754917864"></script>
+    <script src="/js/perfect-scrollbar.min.js?1754917864"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1754917864"></script>
+    <script src="/js/jquery.sticky.js?1754917864"></script>
+    <script src="/js/featherlight.min.js?1754917864"></script>
+    <script src="/js/highlight.pack.js?1754917864"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1754907467"></script>
-    <script src="/js/learn.js?1754907467"></script>
-    <script src="/js/hugo-learn.js?1754907467"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1754917864"></script>
+    <script src="/js/learn.js?1754917864"></script>
+    <script src="/js/hugo-learn.js?1754917864"></script>
 
-    <link href="/mermaid/mermaid.css?1754907467" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1754907467"></script>
+    <link href="/mermaid/mermaid.css?1754917864" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1754917864"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

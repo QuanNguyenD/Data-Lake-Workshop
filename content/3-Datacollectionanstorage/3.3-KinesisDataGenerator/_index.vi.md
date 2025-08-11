@@ -10,17 +10,17 @@ pre : " <b> 3.3 </b> "
 
 **Trước tiên hãy thêm IAM role cho Iam users** 
 
-![Fire](/images/3.firehose/0011-fire.png)
+![Fire](/Data-Lake-Workshop/images/3.firehose/0011-fire.png)
 
 1. Truy cập AWS Management Console.
     - Tìm CloudFormation.
     - Chọn CloudFormation
 
-![Fire](/images/3.firehose/0012-fire.png)
+![Fire](/Data-Lake-Workshop/images/3.firehose/0012-fire.png)
 
 2. Trong giao diện CloudFormation chọn **Create stack**
 
-![Fire](/images/3.firehose/0013-fire.png)
+![Fire](/Data-Lake-Workshop/images/3.firehose/0013-fire.png)
 
 3. Tiến hành tải file [setup](https://raw.githubusercontent.com/QuanNguyenD/FcjWS/refs/heads/main/cognito-setup.json)
 
@@ -34,20 +34,20 @@ pre : " <b> 3.3 </b> "
     - User name nhập ```admin```
     - Password nhâp mật khẩu của bạn
     - Chọn **Next**
-![Fire](/images/3.firehose/0014-fire.png)
+![Fire](/Data-Lake-Workshop/images/3.firehose/0014-fire.png)
 
 6. Tiếp tuc chọn **Next** và **Submit**
 
-![Fire](/images/3.firehose/0016-fire.png)
-![Fire](/images/3.firehose/0015-fire.png)
+![Fire](/Data-Lake-Workshop/images/3.firehose/0016-fire.png)
+![Fire](/Data-Lake-Workshop/images/3.firehose/0015-fire.png)
 
 7. Tạo thành công
 
-![Fire](/images/3.firehose/0017-fire.png)
+![Fire](/Data-Lake-Workshop/images/3.firehose/0017-fire.png)
 
 8. Trong giao diện **Stack** chọn **Output** và chọn **KinesisDataGeneratorUrl**
 
-![Fire](/images/3.firehose/0019-fire.png)
+![Fire](/Data-Lake-Workshop/images/3.firehose/0019-fire.png)
 
 9. Tiến hành nhập mật khẩu và tên đăng nhập
 
@@ -71,11 +71,11 @@ pre : " <b> 3.3 </b> "
 ```
 11. Sau đó chon send data, và sau khi send dc 100000 thì dừng
 
-![Fire](/images/3.firehose/0020-fire.png)
+![Fire](/Data-Lake-Workshop/images/3.firehose/0020-fire.png)
 
 12. Kiểm tra lại trong S3 xem đã có dữ liệu chưa 
 
-![Fire](/images/3.firehose/0021-fire.png)
+![Fire](/Data-Lake-Workshop/images/3.firehose/0021-fire.png)
 
 **Như vây dữ liệu đa đi vào S3**
 

@@ -14,7 +14,7 @@ pre : " <b> 3.1 </b> "
 2. Truy cập vào S3 bucket đã tạo trước đó sau đó mở folder raw
 3. Tạo 1 thư mục mới là ``user-logs`` trong ``raw``
 
-![S3](/images/4.s3/0012-s3.png)
+![S3](/Data-Lake-Workshop/images/4.s3/0012-s3.png)
 
 4. Chúng ta sẽ tải file [order.json](https://raw.githubusercontent.com/QuanNguyenD/FcjWS/refs/heads/main/orders.json)
 
@@ -22,7 +22,7 @@ pre : " <b> 3.1 </b> "
 
     - Chọn upload
 
-![S3](/images/4.s3/0013-s3.png)
+![S3](/Data-Lake-Workshop/images/4.s3/0013-s3.png)
 
 6. Trong giao diện upload 
 
@@ -30,8 +30,8 @@ pre : " <b> 3.1 </b> "
     - Chọn order.json
     - Chọn upload
 
-![S3](/images/4.s3/0015-s3.png)
+![S3](/Data-Lake-Workshop/images/4.s3/0015-s3.png)
 
 7. Sau khi đã upload thành công
 
-![S3](/images/4.s3/0014-s3.png)
+![S3](/Data-Lake-Workshop/images/4.s3/0014-s3.png)

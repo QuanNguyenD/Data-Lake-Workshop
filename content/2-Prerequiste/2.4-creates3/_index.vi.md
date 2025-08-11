@@ -1,7 +1,7 @@
 ---
 title : "Chuẩn bị S3"
 date :  "2025-06-11"
-weight : 4 
+weight : 3
 chapter : false
 pre : " <b> 2.3 </b> "
 ---
@@ -28,34 +28,34 @@ Amazon S3 (Simple Storage Service) là dịch vụ lưu trữ đối tượng ph
 
     - Tìm và chọn **S3**
 
-![S3](/images/4.s3/0001-creates3.png)
+![S3](/Data-Lake-Workshop/images/4.s3/0001-creates3.png)
 
 2. Trong giao diện **S3** chọn **Create bucket**
 
-![S3](/images/4.s3/0002-creates3.png)
+![S3](/Data-Lake-Workshop/images/4.s3/0002-creates3.png)
 
 3. Trong giao diện **Create bucket**
 
     - **Bucket name** điền ``datalake-ecommerce-logs ``
     - Sau đó chọn **Create buckert**
 
-![S3](/images/4.s3/0003-creates3.png)
+![S3](/Data-Lake-Workshop/images/4.s3/0003-creates3.png)
 
 
 4. Tạo thành công bucket
 
-![S3](/images/4.s3/0004-creates3.png)
+![S3](/Data-Lake-Workshop/images/4.s3/0004-creates3.png)
 
 5. Sau khi đã tạo thành công bucket chọn bucket vừa tạo
 
     - Chọn **Create folder**
     - Nhập Folder name là ``data ``
 
-![S3](/images/4.s3/0006-creates3.png)
+![S3](/Data-Lake-Workshop/images/4.s3/0006-creates3.png)
 
 6. Tạo folder thành công
 
-![S3](/images/4.s3/0007-creates3.png)
+![S3](/Data-Lake-Workshop/images/4.s3/0007-creates3.png)
 
 7. Chọn folder **data** và cọn create folder
 
@@ -63,12 +63,12 @@ Amazon S3 (Simple Storage Service) là dịch vụ lưu trữ đối tượng ph
     - Trong giao diện Chọn Create folder, nhập ``raw``
     - Chọn create folder 
 
-![S3](/images/4.s3/0008-creates3.png)
+![S3](/Data-Lake-Workshop/images/4.s3/0008-creates3.png)
 
 8. Tương tự với việc tạo ``processed`` và ``curated``
 9. Tạo thành công 3 folder 
 
-![S3](/images/4.s3/0011-s3.png)
+![S3](/Data-Lake-Workshop/images/4.s3/0011-s3.png)
 
  {{%notice tip%}}
 Đó là các bước chuẩn bị , các bước về sau sẽ làm trên IAM User đã tạo 

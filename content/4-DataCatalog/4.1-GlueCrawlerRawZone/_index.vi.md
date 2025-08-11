@@ -11,10 +11,10 @@ pre : " <b> 4.1 </b> "
 1. Truy cập giao diện [AWS Management Console](https://console.aws.amazon.com)
 
     - Tìm và chọn **AWS Glue**
-![Fire](/images/3.firehose/0022-fire.png)
+![Fire](/Data-Lake-Workshop/images/3.firehose/0022-fire.png)
 2. Chọn Data Catalog -> Database 
 
-![Fire](/images/3.firehose/0023-fire.png)
+![Fire](/Data-Lake-Workshop/images/3.firehose/0023-fire.png)
 
 3. Bấm **Add database**
 
@@ -25,11 +25,11 @@ pre : " <b> 4.1 </b> "
 
 6. Vào tab **Crawlers** → Bấm **Create crawler**
 
-![Fire](/images/3.firehose/0024-fire.png)
+![Fire](/Data-Lake-Workshop/images/3.firehose/0024-fire.png)
 
 7. Nhập: **Name**: ```raw-user-log-crawler``` rồi ấn **Next**
 
-![Fire](/images/3.firehose/0025-fire.png)
+![Fire](/Data-Lake-Workshop/images/3.firehose/0025-fire.png)
 
 8. Choose data source: Data stores
 9. Location:
@@ -37,40 +37,40 @@ pre : " <b> 4.1 </b> "
     - Nhập: s3://data-lake-raw-user-log/ (hoặc bucket bạn đã tạo)
     - Chọn Crawl new sub-folders only
 
-![Fire](/images/3.firehose/0026-fire.png)
+![Fire](/Data-Lake-Workshop/images/3.firehose/0026-fire.png)
 
 10. Bấm Next
-![Fire](/images/3.firehose/0027-fire.png)
+![Fire](/Data-Lake-Workshop/images/3.firehose/0027-fire.png)
 
 **IAM Role cho crawler**
 
 11. Chọn IAM role đã có quyền truy cập S3 và Glue  Hoặc bấm "Create new IAM role" nếu cần
 
-![Fire](/images/3.firehose/0028-fire.png)
+![Fire](/Data-Lake-Workshop/images/3.firehose/0028-fire.png)
 
 12. Bấm **Next**
 
 
-![Fire](/images/3.firehose/0029-fire.png)
+![Fire](/Data-Lake-Workshop/images/3.firehose/0029-fire.png)
 
 **Output (Đầu ra)**
 
 13. Chọn database: ecommerce_raw_db
 14. Bấm Next → Finish
 
-![Fire](/images/3.firehose/0030-fire.png)
+![Fire](/Data-Lake-Workshop/images/3.firehose/0030-fire.png)
 
 15. Kiểm tra lại cấu hình và chọn Create crawler.
 
-![Fire](/images/3.firehose/0031-fire.png)
+![Fire](/Data-Lake-Workshop/images/3.firehose/0031-fire.png)
 
 16. Tạo Crawler thành công. Sau đó, bạn chọn Run crawler.
-![Fire](/images/3.firehose/0032-fire.png)
+![Fire](/Data-Lake-Workshop/images/3.firehose/0032-fire.png)
 
 17. Run crawler thành công 
 
-![Fire](/images/3.firehose/0033-fire.png)
-![Fire](/images/3.firehose/0034-fire.png)
+![Fire](/Data-Lake-Workshop/images/3.firehose/0033-fire.png)
+![Fire](/Data-Lake-Workshop/images/3.firehose/0034-fire.png)
 
 
 18. Kiểm tra kết quả Glue Table
@@ -80,5 +80,5 @@ pre : " <b> 4.1 </b> "
     - ormat: JSON
     - Bạn có thể sửa tên table nếu cần
 
-![Fire](/images/3.firehose/0035-fire.png)
+![Fire](/Data-Lake-Workshop/images/3.firehose/0035-fire.png)
 

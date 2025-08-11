@@ -8,32 +8,34 @@ pre : " <b> 2.2 </b> "
 
 ### Create IAM Role
 
-In this step, we will proceed to create IAM Role. In this IAM Role, the policy **AmazonSSMManagedInstanceCore** will be assigned, this is the policy that allows the EC2 server to communicate with the Session Manager.
+In this step we will create an IAM Role. This role will allow AWS Glue to access data in S3 and create the necessary objects in the Glue Catalog.
 
-1. Go to [IAM service administration interface](https://console.aws.amazon.com/iamv2/)
-2. In the left navigation bar, click **Roles**.
+1. Access the [AWS Management Console](https://console.aws.amazon.com) interface
+- Find and select **IAM**
 
-![role](/images/2.prerequisite/038-iamrole.png)
+2. In the **IAM** interface, select **Role** then select **Crete Role**
 
-3. Click **Create role**.
+![IAM](/Data-Lake-Workshop/images/2.prerequisite/0006-createiamrole.png)
 
-![role1](/images/2.prerequisite/039-iamrole.png)
+3. In the **Select trusted entity** step:
 
-4. Click **AWS service** and click **EC2**.
-  + Click **Next: Permissions**.
+- Select **Select AWS service**
+- In **Service or use case** select **Glue**
+- Then select **Next**
 
-![role1](/images/2.prerequisite/40-iamrole.png)
+![IAM](/Data-Lake-Workshop/images/2.prerequisite/0007-createiamrole.png)
 
-5. In the Search box, enter **AmazonSSMManagedInstanceCore** and press Enter to search for this policy.
-  + Click the policy **AmazonSSMManagedInstanceCore**.
-  + Click **Next: Tags.**
+4. In the **Add permissions** step:
 
-![createpolicy](/images/2.prerequisite/041-iamrole.png)
+- Find and select **AmazonAthenaFullAccess**, **AmazonS3FullAccess**, **AWSGlueServiceRole**
 
-6. Click **Next: Review**.
-7. Name the Role **SSM-Role** in Role Name
-  + Click **Create Role** \.
+Then select **Next**
+5. In the **Name, review, and create** step:
 
-![namerole](/images/2.prerequisite/042-iamrole.png)
+- Role name fill in: **GlueDataLakeRole**
 
-Next, we will make the connection to the EC2 servers we created with **Session Manager**.
+Then select **Create role**
+
+![IAM](/Data-Lake-Workshop/images/2.prerequisite/0008-createiamrole.png)
+
+6. So we have completed creating **IAM Role**

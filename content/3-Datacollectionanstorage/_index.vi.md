@@ -12,4 +12,5 @@ pre : " <b> 3. </b> "
 ### Nội dung 
 
 1. [Thu thập dữ liệu vào S3](3.1-s3data/)
-2. [Tạo Firehose Stream]()
+2. [Tạo Firehose Stream](3.2-firehosestream/)
+3. [Cấu hình Amazon Cognito cho Kinesis Data Generator](3.3-KinesisDataGenerator/)

@@ -17,7 +17,7 @@ pre : " <b> 5. </b> "
 
 ``` SELECT * FROM "curated_db"."user_logs" limit 10; ```
 
-![Glue](/images/5.glue/0036-glue.png)
+![Glue](/Data-Lake-Workshop/images/5.glue/0036-glue.png)
 
 - Nhấn Run Query
 
@@ -25,7 +25,7 @@ pre : " <b> 5. </b> "
 
 - Xem kết quả của câu truy vấn
 
-![Glue](/images/5.glue/0037-glue.png)
+![Glue](/Data-Lake-Workshop/images/5.glue/0037-glue.png)
 
 4. Thực hiện câu truy vấn khác 
 ```
@@ -36,7 +36,7 @@ ORDER BY customer
 limit 10;
 ```
 
-![Glue](/images/5.glue/0038-glue.png)
+![Glue](/Data-Lake-Workshop/images/5.glue/0038-glue.png)
 
 
 

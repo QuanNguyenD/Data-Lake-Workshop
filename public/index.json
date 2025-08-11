@@ -14,32 +14,46 @@
 	"content": "Working with Data Lake Overall In this lab, you will learn the basic concepts and practices of Data Lake Architecture using Amazon S3, AWS Lake Formation, and Athena.\nContent Introduction Preparation Data collection and storage Automated Cataloging with Glue + Data Catalog Analyze with Athena "
 },
 {
+	"uri": "//localhost:1313/4-datacatalog/4.1-gluecrawlerrawzone/",
+	"title": "Glue Crawler for Raw Zone ",
+	"tags": [],
+	"description": "",
+	"content": "Steps Access the AWS Management Console interface Find and select AWS Glue Select Data Catalog -\u0026gt; Database Click Add database\nEnter:\nDatabase name: raw_db (Optional) Description: Glue database for raw logs from user behavior Click Create\nGo to the Crawlers tab → Click Create crawler\nEnter: Name: raw-user-log-crawler then press Next Choose data source: Data stores Location: Select S3 Enter: s3://data-lake-raw-user-log/ (or the bucket you created) Select Crawl new sub-folders only Click Next IAM Role for crawler\nSelect IAM role that already has access to S3 and Glue Or press \u0026ldquo;Create new IAM role\u0026rdquo; if need Click Next Output\nSelect database: ecommerce_raw_db Click Next → Finish Check the configuration again and select Create crawler. Crawler created successfully. Then, you select Run crawler. Run crawler successfully\nCheck Glue Table results Go to Glue → Tables → select database ecommerce_raw_db View the created table Check: column names, types ormat: JSON You can edit the table name if needed "
+},
+{
 	"uri": "//localhost:1313/1-introduce/",
 	"title": "Introduction",
 	"tags": [],
 	"description": "",
-	"content": "Session Manager is a function within the AWS System Manager service, SSM provides verifiable and secure version management without opening incoming ports, without Bastion Host or SSH key management. Session Manager also makes it easy to comply with corporate policies that require controlled access to instances, strict security practices, and fully auditable logs with instance access details, while still providing end-users with one-click cross-platform access to your managed instances.\nBy using Session Manager, you get the following advantages that traditional methods do not have:\nNo need to open port 22 for SSH protocol, so it is more secure. Can be configured so that the connection does not need to go outside the internet, so it is more secure. No need to manage the server\u0026rsquo;s private key to connect to SSH. Centralized management of users using AWS IAM. Access to the server easily and simply with one click. Faster access time than traditional methods like SSH Support many different operating systems such as Linux, Windows, MacOS Log the connection sessions and commands executed while connecting to the server. With the above advantages, you can use Session Manager instead of using Bastion host technique to save us time and money when managing Bastion server.\n"
+	"content": "Data Lake is a large data storage system that allows storing raw data from many different sources such as databases, log files, IoT, social networks, etc. Data in Data Lake can be structured, semi-structured or unstructured.\nCharacteristics of Data Lake:\nStore data with large capacity, low cost.\nData is stored in its original, unprocessed form.\nSupport data analysis, machine learning, big data.\nFlexible in retrieving and processing data.\nApplications of Data Lake:\nBig Data Analytics.\nStore data for AI, Machine Learning.\nIntegrate data from many different sources.\nSome popular Data Lake platforms:: Amazon S3, Azure Data Lake, Google Cloud Storage, Hadoop HDFS.\n"
 },
 {
 	"uri": "//localhost:1313/3-datacollectionanstorage/3.1-s3data/",
 	"title": "Put data into S3 bucket ",
 	"tags": [],
 	"description": "",
-	"content": "Test\n"
+	"content": "In this step we will\nAccess the AWS Management Console interface Find and select S3 Access the previously created S3 bucket then open the raw folder\nCreate a new folder called user-logs in raw We will download the file order.json\nWe proceed to Upload data:\nSelect upload In the upload interface Select Add file\nSelect order.json\nSelect upload\nAfter successfully uploading "
+},
+{
+	"uri": "//localhost:1313/3-datacollectionanstorage/3.2-firehosestream/",
+	"title": "Create Firehose Stream",
+	"tags": [],
+	"description": "",
+	"content": " Preparation Add the following permissions to IAM User AmazonKinesisFullAccess, AmazonKinesisFirehoseFullAccess, IAMFullAccess. Go to Kinesis Go to AmaZone Data Firehose In Firehose streams select Create Firehose stream In Create Firehose stream In Sourse select Direct PUT In Destination select Amazon S3 In Firehose stream name fill in PUT-S3-UserLogsToS3 In Destination settings Select the S3 bucket created earlier S3 bucket prefix enter data/raw/user-logs/ S3 bucket error output prefix enter data/error/user-logs/ In the Buffer hins, compression, file extention and encryption section Buffer size enter 1. Buffer interval enter 60. In the Advanced settings step Service access select Create or update IAM role Then select Create delivery stream If in the above step there is an IAM role error when pressing Create delivery stream, you just need to press it again :))\nSuccessfully created Firehose streams "
+},
+{
+	"uri": "//localhost:1313/4-datacatalog/4.2-gluejobetlprocessedzone/",
+	"title": "Create Glue Job ETL → Processed Zone ",
+	"tags": [],
+	"description": "",
+	"content": "Steps Access the AWS Management Console interface Find and select AWS Glue Select Data Catalog -\u0026gt; Database 3. Select Add database\nEnter the name Name: processed_db Create Glue Job (ETL Raw → Processed) Preparation\nYou need to have created:\nIAM Role with access to S3, Glue, Lake Formation (eg: AWSGlueServiceRole-DataLake)\nGlue Database raw_db (already from the previous step)\nCrawler running for Raw Zone → has JSON table\nBucket S3 Processed Zone\nCreate Glue Job (ETL Raw → Processed) AWS Console → AWS Glue → ETL Jobs → “script editor”. At Engine select Spark Options select Upload script Proceed to download the script file here then upload and click Create Script In the next section select Jobs details Name etl_raw_to_processed IAM role select Glue role with permissions to S3/Lake Formation. Created successfully Click Run, After running, go to S3 to check "
 },
 {
 	"uri": "//localhost:1313/2-prerequiste/2.2-createiamrole/",
 	"title": "Create IAM Role",
 	"tags": [],
 	"description": "",
-	"content": "Create IAM Role In this step, we will proceed to create IAM Role. In this IAM Role, the policy AmazonSSMManagedInstanceCore will be assigned, this is the policy that allows the EC2 server to communicate with the Session Manager.\nGo to IAM service administration interface In the left navigation bar, click Roles. Click Create role. Click AWS service and click EC2. Click Next: Permissions. In the Search box, enter AmazonSSMManagedInstanceCore and press Enter to search for this policy. Click the policy AmazonSSMManagedInstanceCore. Click Next: Tags. Click Next: Review. Name the Role SSM-Role in Role Name Click Create Role . Next, we will make the connection to the EC2 servers we created with Session Manager.\n"
-},
-{
-	"uri": "//localhost:1313/4-datacatalog/4.2-gluejobetlprocessedzone/",
-	"title": "Glue Crawler cho Processed Zone ",
-	"tags": [],
-	"description": "",
-	"content": ""
+	"content": "Create IAM Role In this step we will create an IAM Role. This role will allow AWS Glue to access data in S3 and create the necessary objects in the Glue Catalog.\nAccess the AWS Management Console interface Find and select IAM In the IAM interface, select Role then select Crete Role In the Select trusted entity step: Select Select AWS service In Service or use case select Glue Then select Next In the Add permissions step: Find and select AmazonAthenaFullAccess, AmazonS3FullAccess, AWSGlueServiceRole Then select Next 5. In the Name, review, and create step:\nRole name fill in: GlueDataLakeRole Then select Create role\nSo we have completed creating IAM Role "
 },
 {
 	"uri": "//localhost:1313/2-prerequiste/",
@@ -49,78 +63,57 @@
 	"content": "In this step, we will:\nCreate an IAM User to grant access to the necessary AWS services for individuals or practice groups. Create an S3 bucket to help you store data. Contents Prepare IAM User Prepare IAM Role Create IAM Policy Prepare S3 "
 },
 {
-	"uri": "//localhost:1313/4-datacatalog/4.4-etlprocessedtocurated/",
-	"title": "Tạo Glue Job ETL → Processed Zone ",
+	"uri": "//localhost:1313/3-datacollectionanstorage/3.3-kinesisdatagenerator/",
+	"title": "Configuring Amazon Cognito for Kinesis Data Generator",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": "Steps First add IAM role for Iam users\nGo to AWS Management Console. Search for CloudFormation. Select CloudFormation In the CloudFormation interface, select Create stack Proceed to download the file setup\nIn the Create stack interface:\nChoose an existing template In the Specify template section, select Upload a template file In the Choose file section, select the previously downloaded file Click Next 5. In the Specify stack details interface\nEnter stack name Kinesis-Data-Generator-Cognito-User User name enter admin Password enter your password Select Next Continue to select Next and Submit Created successfully In the Stack interface, select Output and select KinesisDataGeneratorUrl Enter your password and username\nIn the Amazon Kinesis Data Generator interface\nRecord per second enter 2000\nRecord template select template 1\nEnter the following code\n{\r\u0026#34;order_id\u0026#34;: \u0026#34;{{random.uuid}}\u0026#34;,\r\u0026#34;customer\u0026#34;: {{random.arrayElement([\r\u0026#34;\\\u0026#34;Alice\\\u0026#34;\u0026#34;, \u0026#34;\\\u0026#34;Bob\\\u0026#34;\u0026#34;, \u0026#34;\\\u0026#34;Charlie\\\u0026#34;\u0026#34;, \u0026#34;\\\u0026#34;Diana\\\u0026#34;\u0026#34;, \u0026#34;\\\u0026#34;Eve\\\u0026#34;\u0026#34;,\r\u0026#34;\\\u0026#34;Frank\\\u0026#34;\u0026#34;, \u0026#34;\\\u0026#34;Grace\\\u0026#34;\u0026#34;, \u0026#34;\\\u0026#34;Hannah\\\u0026#34;\u0026#34;, \u0026#34;\\\u0026#34;Ivan\\\u0026#34;\u0026#34;, \u0026#34;\\\u0026#34;Jack\\\u0026#34;\u0026#34;,\r\u0026#34;\\\u0026#34;Karen\\\u0026#34;\u0026#34;, \u0026#34;\\\u0026#34;Leo\\\u0026#34;\u0026#34;, \u0026#34;\\\u0026#34;Mia\\\u0026#34;\u0026#34;, \u0026#34;\\\u0026#34;Nina\\\u0026#34;\u0026#34;, \u0026#34;\\\u0026#34;Oscar\\\u0026#34;\u0026#34;\r])}},\r\u0026#34;amount\u0026#34;: {{random.number({ \u0026#34;min\u0026#34;: 50, \u0026#34;max\u0026#34;: 1000, \u0026#34;precision\u0026#34;: 0.01 })}},\r\u0026#34;timestamp\u0026#34;: \u0026#34;{{date.now(\u0026#34;iso\u0026#34;)}}\u0026#34;\r} Then select send data, and stop after sending 100000 Check in S3 to see if there is data yet So the data has gone into S3\n"
 },
 {
 	"uri": "//localhost:1313/3-datacollectionanstorage/",
 	"title": "Data collection and storage ",
 	"tags": [],
 	"description": "",
-	"content": "Test\n"
+	"content": " In this section we will proceed to save data to S3 First, log in to the IAM user account created earlier to proceed with the exercise. Contents Collect data to S3 Create Firehose Stream Amazon Cognito Configuration for Kinesis Data Generator "
 },
 {
 	"uri": "//localhost:1313/4-datacatalog/4.3-gluecrawlerprocessedzone/",
-	"title": "Glue Crawler cho Processed Zone ",
+	"title": "Glue Crawler for Processed Zone ",
 	"tags": [],
 	"description": "",
-	"content": ""
-},
-{
-	"uri": "//localhost:1313/2-prerequiste/2.3-createpolicy/",
-	"title": "Preparation ",
-	"tags": [],
-	"description": "",
-	"content": "Test\n"
-},
-{
-	"uri": "//localhost:1313/4-datacatalog/",
-	"title": "Data Catalog ",
-	"tags": [],
-	"description": "",
-	"content": "Nội dung "
+	"content": "Create Glue Crawler for Processed Zone Access the AWS Management Console interface Find and select AWS Glue Select Crawlers → Add Crawler In the Name section, enter: processed-user-log-crawler, select Next In the Data sources section, select Add a data sources In the S3 path section, select the S3 path and Add an S3 data source. Select Next 7. Select the IAM role that already has access to S3 and Glue Or click \u0026ldquo;Create new IAM role\u0026rdquo; if needed 8. Select next 9. For Target database, select processed_db 10. Check the configuration again and select Create crawler 11. Successfully created\n12. Select Run crawler → create table in catalog Run crawler successfully Check Glue Table result Go to Glue → Tables → select database processed_db You will see 1 more Column name is log_date "
 },
 {
 	"uri": "//localhost:1313/2-prerequiste/2.4-creates3/",
-	"title": "Preparation ",
+	"title": "Prepare S3 ",
 	"tags": [],
 	"description": "",
-	"content": "Test\n"
+	"content": "Prepare S3 bucket to store data: Amazon S3 (Simple Storage Service) is a popular object storage service, often used as a storage platform for Data Lake. Creating an S3 bucket helps you store raw, semi-structured or unstructured data from many different sources, serving big data analysis.\nIn this article, we will divide data into 3 zones for effective management and processing:\nRaw Zone: Stores original, unprocessed data from different sources (database, logs, IoT, \u0026hellip;). Data in raw form, not normalized or cleaned. Processed Zone: Stores data that has been pre-processed such as cleaning, format conversion, error removal. The data here is ready for the next analysis steps. Curated Zone Stores aggregated, standardized data, ready for in-depth analysis or reporting. Data in this zone is often of high quality and clearly structured. Implementation: Access the AWS Management Console interface Find and select S3 In the S3 interface, select Create bucket In the Create bucket interface Bucket name enter datalake-ecommerce-logs Then select Create bucket Successfully created bucket After successfully creating a bucket, select the bucket you just created\nSelect Create folder Enter the Folder name as data Folder created successfully Select the data folder and select create folder\nSelect Create folder In the Select Create folder interface, enter raw Select create folder Similar to creating processed and curated Successfully created 3 folders These are the preparation steps, the following steps will be done on the created IAM User\n"
+},
+{
+	"uri": "//localhost:1313/4-datacatalog/",
+	"title": "Automated Cataloging with Glue + Data Catalog ",
+	"tags": [],
+	"description": "",
+	"content": "Content Create Glue Crawler Glue Crawler for Processed Zone "
+},
+{
+	"uri": "//localhost:1313/4-datacatalog/4.4-etlprocessedtocurated/",
+	"title": "Create Glue Job: ETL from Processed →Curated ",
+	"tags": [],
+	"description": "",
+	"content": "Steps Access the AWS Management Console interface Find and select AWS Glue Select Data Catalog -\u0026gt; Database Select Add database Enter name: curated_db Click Create database Created successfully Create Glue Job: ETL from Processed → Curated AWS Console → AWS Glue → ETL Jobs → “script editor”.\nOptions select Upload script\nProceed to download the script file here then upload and click Create Script\n10. In the next section, select Jobs details\nJob name: etl_processed_to_curated IAM Role: AWSGlueServiceRole-submit-crawler Type: Spark Created successfully Click Run 13. After running successfully, go to S3 to check\n"
 },
 {
 	"uri": "//localhost:1313/4-datacatalog/4.5-gluecrawlercuratedzone/",
-	"title": "Glue Crawler cho Curated Zone ",
+	"title": "Glue Crawler for Curated Zone ",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": "Create Glue Crawler for Curated Zone Access the AWS Management Console interface Find and select AWS Glue Select Crawlers → Add Crawler In the S3 section, select: s3://your-curated-bucket/curated/user_logs/, then select Add an S3 data source Select Next\nSelect the IAM role that has access access S3 and Glue Or click \u0026ldquo;Create new IAM role\u0026rdquo; if needed then select Next\nIn Target database section select curated_db then select Next Check configuration again and select Create crawler Created successfully Select Run crawler After successful run check Glue Table result "
 },
 {
 	"uri": "//localhost:1313/5-athena/",
 	"title": "Phân tích với Athena ",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "//localhost:1313/3-datacollectionanstorage/3.2-firehosestream/",
-	"title": "",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "//localhost:1313/3-datacollectionanstorage/3.3-kinesisdatagenerator/",
-	"title": "",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "//localhost:1313/4-datacatalog/4.1-gluecrawlerrawzone/",
-	"title": "",
 	"tags": [],
 	"description": "",
 	"content": ""

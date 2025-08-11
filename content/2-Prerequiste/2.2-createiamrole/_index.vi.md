@@ -15,7 +15,7 @@ Trong bước này chúng ta sẽ tiến hành tạo IAM Role. Role này sẽ ch
 
 2. Trong giao diện **IAM** chọn **Role** sau đó chọn **Crete Role**
 
-![IAM](/images/2.prerequisite/0006-createiamrole.png)
+![IAM](/Data-Lake-Workshop/images/2.prerequisite/0006-createiamrole.png)
 
 3. Trong bước **Select trusted entity**:
 
@@ -24,7 +24,7 @@ Trong bước này chúng ta sẽ tiến hành tạo IAM Role. Role này sẽ ch
   - Sau đó chọn **Next**
 
 
-![IAM](/images/2.prerequisite/0007-createiamrole.png)
+![IAM](/Data-Lake-Workshop/images/2.prerequisite/0007-createiamrole.png)
 
 4. Trong bước **Trong bước Add permissions** : 
 
@@ -35,7 +35,7 @@ Trong bước này chúng ta sẽ tiến hành tạo IAM Role. Role này sẽ ch
   - Role name điền: **GlueDataLakeRole**
   - Sau đó chọn **Create role**
 
-![IAM](/images/2.prerequisite/0008-createiamrole.png)
+![IAM](/Data-Lake-Workshop/images/2.prerequisite/0008-createiamrole.png)
 
 6. Vậy là chúng ta đã hoàn thành tạo **IAM Role**
 

@@ -12,21 +12,21 @@
     <title>Cấu hình Amazon Cognito cho Kinesis Data Generator :: AWS System Manager</title>
 
     
-    <link href="/css/nucleus.css?1754911074" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1754911074" rel="stylesheet">
-    <link href="/css/hybrid.css?1754911074" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1754911074" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1754911074" rel="stylesheet">
-    <link href="/css/auto-complete.css?1754911074" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1754911074" rel="stylesheet">
-    <link href="/css/theme.css?1754911074" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1754911074" rel="stylesheet">
+    <link href="/css/nucleus.css?1754917785" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1754917785" rel="stylesheet">
+    <link href="/css/hybrid.css?1754917785" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1754917785" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1754917785" rel="stylesheet">
+    <link href="/css/auto-complete.css?1754917785" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1754917785" rel="stylesheet">
+    <link href="/css/theme.css?1754917785" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1754917785" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1754911074" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1754917785" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1754911074"></script>
+    <script src="/js/jquery-3.3.1.min.js?1754917785"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1754911074"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1754911074"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1754917785"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1754917785"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1754911074"></script>
+<script type="text/javascript" src="/js/search.js?1754917785"></script>
 
     
   </div>
@@ -174,34 +174,6 @@
         ">
       <a href="/vi/2-prerequiste/2.2-createiamrole/">
            <b> 2.2 </b> Tạo IAM Role
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/vi/2-prerequiste/2.3-createpolicy/" title="Tạo IAM Policiy" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/vi/2-prerequiste/2.3-createpolicy/">
-           <b> 2.3 </b> Tạo IAM Policiy
           
             <i class="fas fa-check read-icon"></i>
           
@@ -764,7 +736,7 @@
 
 	<h3 id="các-bước-thực-hiện">Các bước thực hiện</h3>
 <p><strong>Trước tiên hãy thêm IAM role cho Iam users</strong></p>
-<p><img src="/images/3.firehose/0011-fire.png" alt="Fire"></p>
+<p><img src="/Data-Lake-Workshop/images/3.firehose/0011-fire.png" alt="Fire"></p>
 <ol>
 <li>Truy cập AWS Management Console.
 <ul>
@@ -773,11 +745,11 @@
 </ul>
 </li>
 </ol>
-<p><img src="/images/3.firehose/0012-fire.png" alt="Fire"></p>
+<p><img src="/Data-Lake-Workshop/images/3.firehose/0012-fire.png" alt="Fire"></p>
 <ol start="2">
 <li>Trong giao diện CloudFormation chọn <strong>Create stack</strong></li>
 </ol>
-<p><img src="/images/3.firehose/0013-fire.png" alt="Fire"></p>
+<p><img src="/Data-Lake-Workshop/images/3.firehose/0013-fire.png" alt="Fire"></p>
 <ol start="3">
 <li>
 <p>Tiến hành tải file <a href="https://raw.githubusercontent.com/QuanNguyenD/FcjWS/refs/heads/main/cognito-setup.json">setup</a></p>
@@ -798,23 +770,23 @@
 <li>User name nhập <code>admin</code></li>
 <li>Password nhâp mật khẩu của bạn</li>
 <li>Chọn <strong>Next</strong>
-<img src="/images/3.firehose/0014-fire.png" alt="Fire"></li>
+<img src="/Data-Lake-Workshop/images/3.firehose/0014-fire.png" alt="Fire"></li>
 </ul>
 </li>
 <li>
 <p>Tiếp tuc chọn <strong>Next</strong> và <strong>Submit</strong></p>
 </li>
 </ol>
-<p><img src="/images/3.firehose/0016-fire.png" alt="Fire">
-<img src="/images/3.firehose/0015-fire.png" alt="Fire"></p>
+<p><img src="/Data-Lake-Workshop/images/3.firehose/0016-fire.png" alt="Fire">
+<img src="/Data-Lake-Workshop/images/3.firehose/0015-fire.png" alt="Fire"></p>
 <ol start="7">
 <li>Tạo thành công</li>
 </ol>
-<p><img src="/images/3.firehose/0017-fire.png" alt="Fire"></p>
+<p><img src="/Data-Lake-Workshop/images/3.firehose/0017-fire.png" alt="Fire"></p>
 <ol start="8">
 <li>Trong giao diện <strong>Stack</strong> chọn <strong>Output</strong> và chọn <strong>KinesisDataGeneratorUrl</strong></li>
 </ol>
-<p><img src="/images/3.firehose/0019-fire.png" alt="Fire"></p>
+<p><img src="/Data-Lake-Workshop/images/3.firehose/0019-fire.png" alt="Fire"></p>
 <ol start="9">
 <li>
 <p>Tiến hành nhập mật khẩu và tên đăng nhập</p>
@@ -847,11 +819,11 @@
 </code></pre><ol start="11">
 <li>Sau đó chon send data, và sau khi send dc 100000 thì dừng</li>
 </ol>
-<p><img src="/images/3.firehose/0020-fire.png" alt="Fire"></p>
+<p><img src="/Data-Lake-Workshop/images/3.firehose/0020-fire.png" alt="Fire"></p>
 <ol start="12">
 <li>Kiểm tra lại trong S3 xem đã có dữ liệu chưa</li>
 </ol>
-<p><img src="/images/3.firehose/0021-fire.png" alt="Fire"></p>
+<p><img src="/Data-Lake-Workshop/images/3.firehose/0021-fire.png" alt="Fire"></p>
 <p><strong>Như vây dữ liệu đa đi vào S3</strong></p>
 
 
@@ -921,22 +893,6 @@
                     
                     
 
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
                         
             
@@ -1199,19 +1155,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1754911074"></script>
-    <script src="/js/perfect-scrollbar.min.js?1754911074"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1754911074"></script>
-    <script src="/js/jquery.sticky.js?1754911074"></script>
-    <script src="/js/featherlight.min.js?1754911074"></script>
-    <script src="/js/highlight.pack.js?1754911074"></script>
+    <script src="/js/clipboard.min.js?1754917785"></script>
+    <script src="/js/perfect-scrollbar.min.js?1754917785"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1754917785"></script>
+    <script src="/js/jquery.sticky.js?1754917785"></script>
+    <script src="/js/featherlight.min.js?1754917785"></script>
+    <script src="/js/highlight.pack.js?1754917785"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1754911074"></script>
-    <script src="/js/learn.js?1754911074"></script>
-    <script src="/js/hugo-learn.js?1754911074"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1754917785"></script>
+    <script src="/js/learn.js?1754917785"></script>
+    <script src="/js/hugo-learn.js?1754917785"></script>
 
-    <link href="/mermaid/mermaid.css?1754911074" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1754911074"></script>
+    <link href="/mermaid/mermaid.css?1754917785" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1754917785"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
