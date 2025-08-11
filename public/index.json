@@ -1,5 +1,12 @@
 [
 {
+	"uri": "//localhost:1313/2-prerequiste/2.1-createiamuser/",
+	"title": "Chuẩn bị IAM User",
+	"tags": [],
+	"description": "",
+	"content": "Create IAM User Access the AWS Management Console interface Find and select IAM In the IAM interface, select User In the IAM User interface, select Create User In the IAM user creation interface, we follow these steps: User name enter data-lake-admin Tick Provide user access to the AWS Management Console - optional In the User type section, select I want to create an IAM user In the Console password section, you can choose to create a random password or manually In the Set permissions section, select Attach policies directly and add the following Permissions policies: AmazonS3FullAccess AmazonAthenaFullAccess AWSGlueConsoleFullAccess AWSLakeFormationDataAdmin CloudWatchLogsFullAccess Then select Next and select create user in the Review and create section In the Retrieve password section you can choose to Download the .csv file to your computer and save it in a safe place. "
+},
+{
 	"uri": "//localhost:1313/",
 	"title": "Data Lake",
 	"tags": [],
@@ -39,7 +46,7 @@
 	"title": "Preparation ",
 	"tags": [],
 	"description": "",
-	"content": "\rYou need to create 1 Linux instance on the public subnet and 1 Window instance on the private subnet to perform this lab.\nTo learn how to create EC2 instances and VPCs with public/private subnets, you can refer to the lab:\nAbout Amazon EC2 Works with Amazon VPC In order to use System Manager to manage our window instances in particular and our instances in general on AWS, we need to give permission to our instances to be able to work with System Manager. In this preparation, we will also proceed to create an IAM Role to grant permissions to instances that can work with System Manager.\nContent Prepare VPC and EC2 Create IAM Role "
+	"content": "In this step, we will:\nCreate an IAM User to grant access to the necessary AWS services for individuals or practice groups. Create an S3 bucket to help you store data. Contents Prepare IAM User Prepare IAM Role Create IAM Policy Prepare S3 "
 },
 {
 	"uri": "//localhost:1313/4-datacatalog/4.4-etlprocessedtocurated/",
@@ -93,13 +100,6 @@
 {
 	"uri": "//localhost:1313/5-athena/",
 	"title": "Phân tích với Athena ",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "//localhost:1313/2-prerequiste/2.1-createiamuser/",
-	"title": "",
 	"tags": [],
 	"description": "",
 	"content": ""

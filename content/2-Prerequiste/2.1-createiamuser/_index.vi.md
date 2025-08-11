@@ -11,15 +11,15 @@ pre : " <b> 2.1 </b> "
     - Tìm và chọn **IAM**
 
 
-![IAM](/images/2.prerequisite/0001-createiam.png)
+![IAM](/Data-Lake-Workshop/images/2.prerequisite/0001-createiam.png)
 
 2. Trong giao diện **IAM** chọn **User** 
 
-![IAM](/images/2.prerequisite/0002-createiam.png)
+![IAM](/Data-Lake-Workshop/images/2.prerequisite/0002-createiam.png)
 
 3. Trong giao diện **IAM User** chọn **Create User**
 
-![IAM](/images/2.prerequisite/0003-createiamuser.png)
+![IAM](/Data-Lake-Workshop/images/2.prerequisite/0003-createiamuser.png)
 
 4. Trong giao diện tạo IAM user chúng ta làm theo các bước sau:
 
@@ -28,7 +28,7 @@ pre : " <b> 2.1 </b> "
     - Trong phần User type chọn **I want to create an IAM user**
     - Tại phần **Console password** bạn có thể để chọn tạo mật khẩu ngẫu nhiên hoạc theo cách thủ công
 
-![IAM](/images/2.prerequisite/0004-createiamuser.png)
+![IAM](/Data-Lake-Workshop/images/2.prerequisite/0004-createiamuser.png)
 
 5. Trong phần **Set permissions** chọn **Attach policies directly** và thêm các **Permissions policies** sau:
     - **AmazonS3FullAccess**
@@ -39,7 +39,7 @@ pre : " <b> 2.1 </b> "
 
     Sau đó chọn **Next** và chọn create user trong phần **Review and create**
 
-![IAM](/images/2.prerequisite/0005-createiamuser.png)
+![IAM](/Data-Lake-Workshop/images/2.prerequisite/0005-createiamuser.png)
 
 6. Trong phần **Retrieve password** bạn có thể chọn Download .csv file về máy và lưu nó ở một nơi an toàn.
 
