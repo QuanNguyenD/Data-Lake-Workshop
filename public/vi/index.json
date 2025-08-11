@@ -119,6 +119,13 @@
 	"content": "Phân tích với Athena Truy cập giao diện AWS Management Console Truy cập Athena Trong giao diện Athena: Tại mục Data Source, chọn AwsDataCatalog Tại mục Database, chọn curated_db Thực hiện câu truy vấn sau SELECT * FROM \u0026quot;curated_db\u0026quot;.\u0026quot;user_logs\u0026quot; limit 10;\nNhấn Run Query\nChờ đến khi trạng thái chuyển thành Complete\nXem kết quả của câu truy vấn\nThực hiện câu truy vấn khác SELECT customer,count(amount_value) FROM \u0026#34;curated_db\u0026#34;.\u0026#34;user_logs\u0026#34; GROUP BY customer ORDER BY customer limit 10; "
 },
 {
+	"uri": "//localhost:1313/vi/6-cleanupresources/",
+	"title": "Clean up resources ",
+	"tags": [],
+	"description": "",
+	"content": "Delete Table database in AWS Glue Access to AWS Glue Select Tables Select the tables to delete Select Action Delete Database in AWS Glue Access to AWS Glue Select Databases Select the database related to the lab Select Action Select Delete to confirm database deletion Delete AWS S3 bucket Access to AWS S3 Select Buckets Select the bucket related to the lab Select Empty Type permanently delete, then select Empty Select the bucket to be deleted again, select Delete Confirm delete bucket "
+},
+{
 	"uri": "//localhost:1313/vi/categories/",
 	"title": "Categories",
 	"tags": [],

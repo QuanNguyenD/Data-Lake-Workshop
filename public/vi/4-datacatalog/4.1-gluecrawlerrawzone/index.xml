@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Glue Crawler cho Raw Zone  on AWS System Manager</title>
+    <title>Glue Crawler cho Raw Zone  on Data Lake</title>
     <link>//localhost:1313/vi/4-datacatalog/4.1-gluecrawlerrawzone/</link>
-    <description>Recent content in Glue Crawler cho Raw Zone  on AWS System Manager</description>
+    <description>Recent content in Glue Crawler cho Raw Zone  on Data Lake</description>
     <generator>Hugo</generator>
     <language>vi</language>
     <lastBuildDate></lastBuildDate>

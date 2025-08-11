@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Create Glue Job: ETL from Processed →Curated  on AWS System Manager</title>
+    <title>Create Glue Job: ETL from Processed →Curated  on Data Lake</title>
     <link>//localhost:1313/4-datacatalog/4.4-etlprocessedtocurated/</link>
-    <description>Recent content in Create Glue Job: ETL from Processed →Curated  on AWS System Manager</description>
+    <description>Recent content in Create Glue Job: ETL from Processed →Curated  on Data Lake</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate></lastBuildDate>

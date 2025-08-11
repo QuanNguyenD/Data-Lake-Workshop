@@ -105,6 +105,13 @@
 	"content": "Steps Access the AWS Management Console interface Find and select AWS Glue Select Data Catalog -\u0026gt; Database Select Add database Enter name: curated_db Click Create database Created successfully Create Glue Job: ETL from Processed → Curated AWS Console → AWS Glue → ETL Jobs → “script editor”.\nOptions select Upload script\nProceed to download the script file here then upload and click Create Script\n10. In the next section, select Jobs details\nJob name: etl_processed_to_curated IAM Role: AWSGlueServiceRole-submit-crawler Type: Spark Created successfully Click Run 13. After running successfully, go to S3 to check\n"
 },
 {
+	"uri": "//localhost:1313/5-athena/",
+	"title": "Analyze with Athena ",
+	"tags": [],
+	"description": "",
+	"content": "Analyze with Athena Access the AWS Management Console interface Access Athena In the Athena interface: In the Data Source section, select AwsDataCatalog\nIn the Database section, select curated_db\nExecute the following query\nSELECT * FROM \u0026quot;curated_db\u0026quot;.\u0026quot;user_logs\u0026quot; limit 10;\nClick Run Query\nWait until the status changes to Complete\nView the results of the query\nExecute another query SELECT customer,count(amount_value)\rFROM \u0026#34;curated_db\u0026#34;.\u0026#34;user_logs\u0026#34;\rGROUP BY customer\rORDER BY customer\rlimit 10; "
+},
+{
 	"uri": "//localhost:1313/4-datacatalog/4.5-gluecrawlercuratedzone/",
 	"title": "Glue Crawler for Curated Zone ",
 	"tags": [],
@@ -112,11 +119,11 @@
 	"content": "Create Glue Crawler for Curated Zone Access the AWS Management Console interface Find and select AWS Glue Select Crawlers → Add Crawler In the S3 section, select: s3://your-curated-bucket/curated/user_logs/, then select Add an S3 data source Select Next\nSelect the IAM role that has access access S3 and Glue Or click \u0026ldquo;Create new IAM role\u0026rdquo; if needed then select Next\nIn Target database section select curated_db then select Next Check configuration again and select Create crawler Created successfully Select Run crawler After successful run check Glue Table result "
 },
 {
-	"uri": "//localhost:1313/5-athena/",
-	"title": "Phân tích với Athena ",
+	"uri": "//localhost:1313/6-cleanupresources/",
+	"title": "Clean up resources ",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": "Delete Table database in AWS Glue Access to AWS Glue Select Tables Select the tables to delete Select Action Delete Database in AWS Glue Access to AWS Glue Select Databases Select the database related to the lab Select Action Select Delete to confirm database deletion Delete AWS S3 bucket Access to AWS S3 Select Buckets Select the bucket related to the lab Select Empty Type permanently delete, then select Empty Select the bucket to be deleted again, select Delete Confirm delete bucket "
 },
 {
 	"uri": "//localhost:1313/categories/",
