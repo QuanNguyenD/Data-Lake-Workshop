@@ -2,6 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>//localhost:1313/2-prerequiste/2.1-createiamuser/</loc>
+    <lastmod>2025-06-11T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/2-prerequiste/2.1-createiamuser/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/2-prerequiste/2.1-createiamuser/"
+                />
+  </url><url>
     <loc>//localhost:1313/</loc>
     <lastmod>2025-06-11T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -13,6 +26,19 @@
                 rel="alternate"
                 hreflang="en"
                 href="//localhost:1313/"
+                />
+  </url><url>
+    <loc>//localhost:1313/4-datacatalog/4.1-gluecrawlerrawzone/</loc>
+    <lastmod>2025-06-11T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/4-datacatalog/4.1-gluecrawlerrawzone/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/4-datacatalog/4.1-gluecrawlerrawzone/"
                 />
   </url><url>
     <loc>//localhost:1313/1-introduce/</loc>
@@ -41,17 +67,17 @@
                 href="//localhost:1313/3-datacollectionanstorage/3.1-s3data/"
                 />
   </url><url>
-    <loc>//localhost:1313/2-prerequiste/2.2-createiamrole/</loc>
+    <loc>//localhost:1313/3-datacollectionanstorage/3.2-firehosestream/</loc>
     <lastmod>2025-06-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/2-prerequiste/2.2-createiamrole/"
+                href="//localhost:1313/vi/3-datacollectionanstorage/3.2-firehosestream/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/2-prerequiste/2.2-createiamrole/"
+                href="//localhost:1313/3-datacollectionanstorage/3.2-firehosestream/"
                 />
   </url><url>
     <loc>//localhost:1313/4-datacatalog/4.2-gluejobetlprocessedzone/</loc>
@@ -67,6 +93,19 @@
                 href="//localhost:1313/4-datacatalog/4.2-gluejobetlprocessedzone/"
                 />
   </url><url>
+    <loc>//localhost:1313/2-prerequiste/2.2-createiamrole/</loc>
+    <lastmod>2025-06-11T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/2-prerequiste/2.2-createiamrole/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/2-prerequiste/2.2-createiamrole/"
+                />
+  </url><url>
     <loc>//localhost:1313/2-prerequiste/</loc>
     <lastmod>2025-06-11T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -80,17 +119,17 @@
                 href="//localhost:1313/2-prerequiste/"
                 />
   </url><url>
-    <loc>//localhost:1313/4-datacatalog/4.4-etlprocessedtocurated/</loc>
+    <loc>//localhost:1313/3-datacollectionanstorage/3.3-kinesisdatagenerator/</loc>
     <lastmod>2025-06-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/4-datacatalog/4.4-etlprocessedtocurated/"
+                href="//localhost:1313/vi/3-datacollectionanstorage/3.3-kinesisdatagenerator/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/4-datacatalog/4.4-etlprocessedtocurated/"
+                href="//localhost:1313/3-datacollectionanstorage/3.3-kinesisdatagenerator/"
                 />
   </url><url>
     <loc>//localhost:1313/3-datacollectionanstorage/</loc>
@@ -119,17 +158,17 @@
                 href="//localhost:1313/4-datacatalog/4.3-gluecrawlerprocessedzone/"
                 />
   </url><url>
-    <loc>//localhost:1313/2-prerequiste/2.3-createpolicy/</loc>
+    <loc>//localhost:1313/2-prerequiste/2.4-creates3/</loc>
     <lastmod>2025-06-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/2-prerequiste/2.3-createpolicy/"
+                href="//localhost:1313/vi/2-prerequiste/2.4-creates3/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/2-prerequiste/2.3-createpolicy/"
+                href="//localhost:1313/2-prerequiste/2.4-creates3/"
                 />
   </url><url>
     <loc>//localhost:1313/4-datacatalog/</loc>
@@ -145,30 +184,17 @@
                 href="//localhost:1313/4-datacatalog/"
                 />
   </url><url>
-    <loc>//localhost:1313/2-prerequiste/2.4-creates3/</loc>
+    <loc>//localhost:1313/4-datacatalog/4.4-etlprocessedtocurated/</loc>
     <lastmod>2025-06-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/2-prerequiste/2.4-creates3/"
+                href="//localhost:1313/vi/4-datacatalog/4.4-etlprocessedtocurated/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/2-prerequiste/2.4-creates3/"
-                />
-  </url><url>
-    <loc>//localhost:1313/4-datacatalog/4.5-gluecrawlercuratedzone/</loc>
-    <lastmod>2025-06-11T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/4-datacatalog/4.5-gluecrawlercuratedzone/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/4-datacatalog/4.5-gluecrawlercuratedzone/"
+                href="//localhost:1313/4-datacatalog/4.4-etlprocessedtocurated/"
                 />
   </url><url>
     <loc>//localhost:1313/5-athena/</loc>
@@ -184,52 +210,30 @@
                 href="//localhost:1313/5-athena/"
                 />
   </url><url>
-    <loc>//localhost:1313/2-prerequiste/2.1-createiamuser/</loc>
+    <loc>//localhost:1313/4-datacatalog/4.5-gluecrawlercuratedzone/</loc>
+    <lastmod>2025-06-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/2-prerequiste/2.1-createiamuser/"
+                href="//localhost:1313/vi/4-datacatalog/4.5-gluecrawlercuratedzone/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/2-prerequiste/2.1-createiamuser/"
+                href="//localhost:1313/4-datacatalog/4.5-gluecrawlercuratedzone/"
                 />
   </url><url>
-    <loc>//localhost:1313/3-datacollectionanstorage/3.2-firehosestream/</loc>
+    <loc>//localhost:1313/6-cleanupresources/</loc>
+    <lastmod>2025-06-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/3-datacollectionanstorage/3.2-firehosestream/"
+                href="//localhost:1313/vi/6-cleanupresources/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/3-datacollectionanstorage/3.2-firehosestream/"
-                />
-  </url><url>
-    <loc>//localhost:1313/3-datacollectionanstorage/3.3-kinesisdatagenerator/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/3-datacollectionanstorage/3.3-kinesisdatagenerator/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/3-datacollectionanstorage/3.3-kinesisdatagenerator/"
-                />
-  </url><url>
-    <loc>//localhost:1313/4-datacatalog/4.1-gluecrawlerrawzone/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/4-datacatalog/4.1-gluecrawlerrawzone/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/4-datacatalog/4.1-gluecrawlerrawzone/"
+                href="//localhost:1313/6-cleanupresources/"
                 />
   </url><url>
     <loc>//localhost:1313/categories/</loc>
